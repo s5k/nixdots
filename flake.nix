@@ -19,6 +19,12 @@
     # Shameless plug: looking for a way to nixify your themes and make
     # everything match nicely? Try nix-colors!
     # nix-colors.url = "github:misterio77/nix-colors";
+
+    # CUSTOMIZE
+    nixGL = {
+	url = "github:guibou/nixGL";
+	flake = false;
+    };
   };
 
   outputs = {
@@ -59,7 +65,7 @@
     # Standalone home-manager configuration entrypoint
     # Available through 'home-manager --flake .#your-username@your-hostname'
     homeConfigurations = {
-      "hydra@pc" = home-manager.lib.homeManagerConfiguration {
+      "hydra@hydra-arch2" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
