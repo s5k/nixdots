@@ -31,6 +31,9 @@ in
 
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
+    ./apps/alacritty.nix
+    ./apps/zsh.nix
+    ./apps/vscode.nix
   ];
 
   nixpkgs = {
@@ -69,50 +72,25 @@ in
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;
   home.packages = with pkgs; [
-	neovim 
+    # Terminal
+    neovim 
+    zoxide
+    exa
+    (nixGLWrap alacritty)
 
-	# terminal
-	zoxide
-	exa
+    # Database gui
+    dbeaver
 
-	# fonts
-	appleEmoji
-	(pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    # fonts
+    appleEmoji
+    (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
 
-	(nixGLWrap alacritty)
-	(import inputs.nixGL { inherit pkgs; }).nixGLIntel
+    # wrapper GPU acceleration for GUI apps
+    (import inputs.nixGL { inherit pkgs; }).nixGLIntel
   ];
 
-  home.file = {
-  	".config/alacritty/alacritty.yml".source = ../dotfiles/alacritty/alacritty.yml;
-  };
-
-  # Enable home-manager and git
   programs.home-manager.enable = true;
   programs.git.enable = true;
-  programs.zsh = {
-  	enable = true;
-	enableSyntaxHighlighting = true;
-	enableAutosuggestions = true;
-	oh-my-zsh = {
-	  enable = true;
-          theme = "robbyrussell";
-          plugins = [
-            "sudo"
-            "terraform"
-            "systemadmin"
-            "vi-mode"
-            "fzf"
-	    "git"
-          ];
-	};
-	initExtra = "
-if [ -f $HOME/Documents/nix-config/dotfiles/zsh/.zshrc ];
-then
-  source $HOME/Documents/nix-config/dotfiles/zsh/.zshrc
-fi
-";
-  };
 
   # font settings
   fonts.fontconfig.enable = true;
@@ -123,7 +101,7 @@ fi
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "23.05";
 
-  # Enable XDG integration
+  # Enable XDG integration (for display apps on laucher)
   xdg.enable = true;
   xdg.mime.enable = true;
   targets.genericLinux.enable = true;
