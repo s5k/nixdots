@@ -21,9 +21,13 @@
     # nix-colors.url = "github:misterio77/nix-colors";
 
     # CUSTOMIZE
+    nixpkgs-firefox-darwin = {
+      url = "github:bandithedoge/nixpkgs-firefox-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nixGL = {
-	url = "github:guibou/nixGL";
-	flake = false;
+      url = "github:guibou/nixGL";
+      flake = false;
     };
   };
 
@@ -31,6 +35,7 @@
     self,
     nixpkgs,
     home-manager,
+    nixpkgs-firefox-darwin,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -39,8 +44,8 @@
       "aarch64-linux"
       "i686-linux"
       "x86_64-linux"
-      "aarch64-darwin"
-      "x86_64-darwin"
+      "aarch64-darwin" # Apple Silicon
+      "x86_64-darwin" # Apple Intel
     ];
     # This is a function that generates an attribute by calling a function you
     # pass to it, with each system as an argument
@@ -65,12 +70,25 @@
     # Standalone home-manager configuration entrypoint
     # Available through 'home-manager --flake .#your-username@your-hostname'
     homeConfigurations = {
+
+      "hydra@macos" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-darwin; # Home-manager requires 'pkgs' instance
+        nixpkgs.overlays = [ nixpkgs-firefox-darwin.overlay ]; 
+        extraSpecialArgs = {inherit inputs outputs;};
+        modules = [
+          # > Our main home-manager configuration file <
+          ./home-manager/home-common.nix
+          ./home-manager/home-darwin.nix
+        ];
+      };
+
       "hydra@hydra-arch2" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
           # > Our main home-manager configuration file <
-          ./home-manager/home.nix
+          ./home-manager/home-common.nix
+          ./home-manager/home-linux.nix
         ];
       };
     };

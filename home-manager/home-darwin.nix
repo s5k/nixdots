@@ -1,3 +1,4 @@
+
 {
   inputs,
   outputs,
@@ -6,34 +7,19 @@
   pkgs,
   ...
 }: 
-let
-  #TEMPORARY: use nixGL to run GUI programs.
-  nixGLWrap = pkg: pkgs.runCommand "${pkg.name}-nixgl-wrapper" {} ''
-    mkdir $out
-    ln -s ${pkg}/* $out
-    rm $out/bin
-    mkdir $out/bin
-    for bin in ${pkg}/bin/*; do
-     wrapped_bin=$out/bin/$(basename $bin)
-     echo "exec nixGLIntel $bin \$@" > $wrapped_bin
-     chmod +x $wrapped_bin
-    done
-  '';
-in
+
 {
   # You can import other home-manager modules here
   imports = [
     # If you want to use modules your own flake exports (from modules/home-manager):
     # outputs.homeManagerModules.example
+    outputs.homeManagerModules.mac-symlink-application
 
     # Or modules exported from other flakes (such as nix-colors):
     # inputs.nix-colors.homeManagerModules.default
 
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
-    ./apps/alacritty.nix
-    ./apps/zsh.nix
-    ./apps/vscode.nix
   ];
 
   nixpkgs = {
@@ -56,53 +42,21 @@ in
     ];
     # Configure your nixpkgs instance
     config = {
-      # Disable if you don't want unfree packages
-      allowUnfree = true;
-      # Workaround for https://github.com/nix-community/home-manager/issues/2942
-      allowUnfreePredicate = _: true;
     };
   };
 
-  # TODO: Set your username
   home = {
     username = "hydra";
-    homeDirectory = "/home/hydra";
+    homeDirectory = "/Users/hydra";
   };
 
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;
   home.packages = with pkgs; [
-    # Terminal
-    neovim 
-    zoxide
-    exa
-    (nixGLWrap alacritty)
-
     # Database gui
-    dbeaver
-
-    # fonts
-    appleEmoji
-    (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
-
-    # wrapper GPU acceleration for GUI apps
-    (import inputs.nixGL { inherit pkgs; }).nixGLIntel
+    sequelpro
   ];
-
-  programs.home-manager.enable = true;
-  programs.git.enable = true;
-
-  # font settings
-  fonts.fontconfig.enable = true;
-
-  # Nicely reload system units when changing configs
-  systemd.user.startServices = "sd-switch";
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "23.05";
-
-  # Enable XDG integration (for display apps on laucher)
-  xdg.enable = true;
-  xdg.mime.enable = true;
-  targets.genericLinux.enable = true;
 }

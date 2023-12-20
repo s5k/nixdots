@@ -3,4 +3,5 @@
 {
   # List your module files here
   # my-module = import ./my-module.nix;
+  mac-symlink-application = import ./mac-symlink-application.nix;
 }

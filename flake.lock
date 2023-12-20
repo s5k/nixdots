@@ -53,6 +53,26 @@
         "type": "github"
       }
     },
+    "nixpkgs-firefox-darwin": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1703032538,
+        "narHash": "sha256-ZcRyms585/OsQNyUWd7MxN30YzjDx9qoTD2ETscHVN0=",
+        "owner": "bandithedoge",
+        "repo": "nixpkgs-firefox-darwin",
+        "rev": "0c5d2eff6f1cece31c3343b0f02d99a6a372db92",
+        "type": "github"
+      },
+      "original": {
+        "owner": "bandithedoge",
+        "repo": "nixpkgs-firefox-darwin",
+        "type": "github"
+      }
+    },
     "nixpkgs-unstable": {
       "locked": {
         "lastModified": 1686501370,
@@ -74,6 +94,7 @@
         "home-manager": "home-manager",
         "nixGL": "nixGL",
         "nixpkgs": "nixpkgs",
+        "nixpkgs-firefox-darwin": "nixpkgs-firefox-darwin",
         "nixpkgs-unstable": "nixpkgs-unstable"
       }
     }
