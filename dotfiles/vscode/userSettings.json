@@ -16,7 +16,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[nix]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "B4dM4n.nixpkgs-fmt"
   },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -98,6 +98,21 @@
     "markdown": false,
     "scminput": false
   },
+  "terminal.integrated.profiles.osx": {
+    "tmux-shell": {
+      "path": "tmux",
+      "args": ["new-session", "-A", "-s", "vscode:${workspaceFolder}"]
+    }
+  },
+  "terminal.integrated.profiles.linux": {
+    "tmux-shell": {
+      "path": "tmux",
+      "args": ["new-session", "-A", "-s", "vscode:${workspaceFolder}"]
+    }
+  },
+  "terminal.integrated.defaultProfile.osx": "tmux-shell",
+  "terminal.integrated.defaultProfile.linux": "tmux-shell",
+
   "security.workspace.trust.untrustedFiles": "open",
   "security.workspace.trust.emptyWindow": false,
   "security.workspace.trust.enabled": false

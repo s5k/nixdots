@@ -1,11 +1,10 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
-}: 
+{ inputs
+, outputs
+, lib
+, config
+, pkgs
+, ...
+}:
 
 {
   # You can import other home-manager modules here
@@ -61,7 +60,8 @@
   # programs.neovim.enable = true;
   home.packages = with pkgs; [
     # Terminal
-    neovim 
+    tmux
+    neovim
     zoxide
     exa
 

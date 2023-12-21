@@ -5,20 +5,20 @@
 
 {
   programs.zsh = {
-  	enable = true;
+    enable = true;
     enableSyntaxHighlighting = true;
     enableAutosuggestions = true;
     oh-my-zsh = {
       enable = true;
-        theme = "robbyrussell";
-        plugins = [
-          "sudo"
-          "terraform"
-          "systemadmin"
-          "vi-mode"
-          "fzf"
-          "git"
-        ];
+      theme = "robbyrussell";
+      plugins = [
+        "sudo"
+        "terraform"
+        "systemadmin"
+        "vi-mode"
+        "fzf"
+        "git"
+      ];
     };
     initExtra = "
       if [ -f $HOME/Documents/nix-config/dotfiles/zsh/.zshrc ];

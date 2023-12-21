@@ -1,12 +1,10 @@
-
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
-}: 
+{ inputs
+, outputs
+, lib
+, config
+, pkgs
+, ...
+}:
 
 {
   # You can import other home-manager modules here
@@ -41,8 +39,7 @@
       # })
     ];
     # Configure your nixpkgs instance
-    config = {
-    };
+    config = { };
   };
 
   home = {

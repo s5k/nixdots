@@ -1,4 +1,4 @@
-{ lib, stdenvNoCC, fetchurl  }:
+{ lib, stdenvNoCC, fetchurl }:
 
 stdenvNoCC.mkDerivation {
   name = "AppleEmojiForLinux";
@@ -14,9 +14,9 @@ stdenvNoCC.mkDerivation {
   installPhase = ''
     mkdir -p $out/share/fonts
     cp -R $src $out/share/fonts/
-    '';
+  '';
 
-  meta =  {
+  meta = {
     description = "Apple Color Emoji for Linux";
     homepage = "https://github.com/samuelngs/apple-emoji-linux";
   };
