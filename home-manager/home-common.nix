@@ -19,6 +19,7 @@
     # ./nvim.nix
     ./apps/alacritty.nix
     ./apps/zsh.nix
+    ./apps/tmux.nix
     ./apps/vscode.nix
     ./apps/firefox.nix
   ];
@@ -60,7 +61,6 @@
   # programs.neovim.enable = true;
   home.packages = with pkgs; [
     # Terminal
-    tmux
     neovim
     zoxide
     exa
