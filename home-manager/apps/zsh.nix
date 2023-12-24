@@ -21,9 +21,9 @@
       ];
     };
     initExtra = "
-      if [ -f $HOME/Documents/nix-config/dotfiles/zsh/.zshrc ];
+      if [ -f $HOME/Documents/nixdots/dotfiles/zsh/.zshrc ];
       then
-        source $HOME/Documents/nix-config/dotfiles/zsh/.zshrc
+        source $HOME/Documents/nixdots/dotfiles/zsh/.zshrc
       fi
       ";
   };

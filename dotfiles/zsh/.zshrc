@@ -1,6 +1,6 @@
 # ~/.zshrc
 
-export DOTFILES="$HOME/Documents/nix-config/dotfiles/zsh"
+export DOTFILES="$HOME/Documents/nixdots/dotfiles/zsh"
 export ZSH_DISABLE_COMPFIX="true"
 export ZSH="$HOME/.oh-my-zsh"
 
