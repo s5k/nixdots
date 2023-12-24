@@ -21,7 +21,6 @@
     ./apps/zsh.nix
     ./apps/tmux.nix
     ./apps/vscode.nix
-    ./apps/firefox.nix
   ];
 
   nixpkgs = {
