@@ -6,15 +6,13 @@
 {
   programs.zsh = {
     enable = true;
-    enableSyntaxHighlighting = true;
+    syntaxHighlighting.enable = true;
     enableAutosuggestions = true;
     oh-my-zsh = {
       enable = true;
       theme = "robbyrussell";
       plugins = [
         "sudo"
-        "terraform"
-        "systemadmin"
         "vi-mode"
         "fzf"
         "git"
