@@ -62,7 +62,7 @@
     # Terminal
     neovim
     zoxide
-    exa
+    eza
 
     # fonts
     (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
@@ -75,5 +75,5 @@
   fonts.fontconfig.enable = true;
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  home.stateVersion = "23.05";
+  home.stateVersion = "23.11";
 }

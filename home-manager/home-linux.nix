@@ -17,6 +17,7 @@
 
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
+    ./apps/gnome.nix
   ];
 
   nixpkgs = {
@@ -26,6 +27,7 @@
       outputs.overlays.additions
       outputs.overlays.modifications
       outputs.overlays.unstable-packages
+      outputs.overlays.nur
 
       # You can also add overlays exported from other flakes:
       # neovim-nightly-overlay.overlays.default
@@ -64,18 +66,10 @@
   systemd.user.startServices = "sd-switch";
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  home.stateVersion = "23.05";
+  home.stateVersion = "23.11";
 
   # Enable XDG integration (for display apps on laucher)
   xdg.enable = true;
   xdg.mime.enable = true;
   targets.genericLinux.enable = true;
-
-  gtk = {
-    enable = true;
-    iconTheme = {
-      name = "Papirus-Dark";
-      package = pkgs.papirus-icon-theme;
-    };
-  };
 }

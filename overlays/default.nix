@@ -1,5 +1,7 @@
 # This file defines overlays
 { inputs, ... }: {
+  nur = inputs.nur.overlay;
+
   # This one brings our custom packages from the 'pkgs' directory
   additions = final: _prev: import ../pkgs { pkgs = final; };
 
