@@ -11,7 +11,6 @@
   imports = [
     # If you want to use modules your own flake exports (from modules/home-manager):
     # outputs.homeManagerModules.example
-    outputs.homeManagerModules.dconf-gnome
 
     # Or modules exported from other flakes (such as nix-colors):
     # inputs.nix-colors.homeManagerModules.default
@@ -28,7 +27,6 @@
       outputs.overlays.additions
       outputs.overlays.modifications
       outputs.overlays.unstable-packages
-      outputs.overlays.nur
 
       # You can also add overlays exported from other flakes:
       # neovim-nightly-overlay.overlays.default
