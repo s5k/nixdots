@@ -89,7 +89,8 @@
     "<C-n>": false,
     "<C-a>": false,
     "<C-w>": false,
-    "<C-c>": false
+    "<C-c>": false,
+    "<C-p>": false
   },
 
   "github.copilot.enable": {
