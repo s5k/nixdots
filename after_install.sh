@@ -12,6 +12,7 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/BambooEngine/ibus-bamboo
 # Docker
 sudo pacman -S docker docker-compose
 sudo systemctl enable docker.service
+sudo chmod 666 /var/run/docker.sock
 
 # Kmonad as non-root user
 sudo groupadd uinput
