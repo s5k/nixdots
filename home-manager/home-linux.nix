@@ -54,6 +54,9 @@
     # Database gui
     dbeaver
 
+    mongodb-compass
+    #unstable.postman
+
     # fonts
     appleEmoji
 
