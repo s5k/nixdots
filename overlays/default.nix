@@ -1,5 +1,7 @@
 # This file defines overlays
-{ inputs, ... }: {
+{ inputs
+, ...
+}: {
   nur = inputs.nur.overlay;
 
   # This one brings our custom packages from the 'pkgs' directory
@@ -12,6 +14,20 @@
     # example = prev.example.overrideAttrs (oldAttrs: rec {
     # ...
     # });
+    # TEMPORARY: self upgrade postman for Linux
+    postman = prev.postman.overrideAttrs (old:
+      let
+        version = "10.21.0";
+      in
+      {
+        inherit version;
+        src = prev.fetchurl {
+          url = "https://dl.pstmn.io/download/version/${version}/linux64";
+          name = "${old.pname}-${version}.tar.gz";
+          sha256 = "SCaNZli29M+qEXYku8zwCob6EAdtg6eVl19opSWqypE=";
+        };
+      }
+    );
   };
 
   # When applied, the unstable nixpkgs set (declared in the flake inputs) will

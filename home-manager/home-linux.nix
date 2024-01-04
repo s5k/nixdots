@@ -55,7 +55,7 @@
     dbeaver
 
     mongodb-compass
-    #unstable.postman
+    postman
 
     # fonts
     appleEmoji
