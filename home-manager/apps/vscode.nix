@@ -25,12 +25,12 @@
       b4dm4n.vscode-nixpkgs-fmt
     ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
       ### install extensions from marketplace when nixpkgs is not built
-      # {
-      #   name = "copilot-chat";
-      #   publisher = "github";
-      #   version = "0.12.2023122001";
-      #   sha256 = "LsDcdlw+TdkCeHxpvY9qjAWEFjl9OXU7RNV9VLVFSdg=";
-      # }
+      {
+        name = "prophet";
+        publisher = "sqrtt";
+        version = "1.4.40";
+        sha256 = "hhpLKnd9U2gxs9saiUBdlR+eJh2PPeIxTi9kK7CgH20=";
+      }
     ];
 
     keybindings = builtins.fromJSON (builtins.readFile ../../dotfiles/vscode/keybindings.json);
