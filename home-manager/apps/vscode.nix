@@ -23,6 +23,9 @@
       bmewburn.vscode-intelephense-client
       bbenoist.nix
       b4dm4n.vscode-nixpkgs-fmt
+      ms-vscode-remote.remote-ssh
+      ritwickdey.liveserver
+      eamodio.gitlens
     ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
       ### install extensions from marketplace when nixpkgs is not built
       {
