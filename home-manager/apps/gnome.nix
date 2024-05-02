@@ -9,7 +9,7 @@
     # Remap keyboards
     # Read this FAQ to configure run Kmonad as non-root user: https://github.com/kmonad/kmonad/blob/master/doc/faq.md#q-how-do-i-get-uinput-permissions
     nur.repos.meain.kmonad
-    gnomeExtensions.kmonad-toggle
+    unstable.gnomeExtensions.kmonad-toggle
   ];
 
   gtk = {
