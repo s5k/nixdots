@@ -16,7 +16,6 @@
       github.copilot
       github.copilot-chat
       usernamehw.errorlens
-      github.github-vscode-theme
       vscodevim.vim
       esbenp.prettier-vscode
       dbaeumer.vscode-eslint
@@ -33,6 +32,18 @@
         publisher = "sqrtt";
         version = "1.4.40";
         sha256 = "hhpLKnd9U2gxs9saiUBdlR+eJh2PPeIxTi9kK7CgH20=";
+      }
+      {
+        name = "volar";
+        publisher = "vue";
+        version = "2.0.6";
+        sha256 = "VbTroWemVVoBW/LwR4OueyIFPUKUuRE5e3QTONO1eZc=";
+      }
+      {
+        name = "ayu";
+        publisher = "teabyii";
+        version = "1.0.5";
+        sha256 = "+IFqgWliKr+qjBLmQlzF44XNbN7Br5a119v9WAnZOu4=";
       }
     ];
 
