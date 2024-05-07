@@ -1,4 +1,4 @@
-# cyberdream theme for Alacritty
+# Cyberdream + Ayu Dark theme for Alacritty
 [[colors.indexed_colors]]
 color = "0xffbd5e"
 index = 16
@@ -8,28 +8,28 @@ color = "0xff6e5e"
 index = 17
 
 [colors.bright]
-black = "0x3c4048"
-blue = "0x5ea1ff"
-cyan = "0x5ef1ff"
-green = "0x5eff6c"
-magenta = "0xbd5eff"
-red = "0xff6e5e"
-white = "0xffffff"
-yellow = "0xf1ff5e"
+black = "0x686868"
+red = "0xF07178"
+green = "0xC2D94C"
+yellow = "0xFFB454"
+blue = "0x59C2FF"
+magenta = "0xFFEE99"
+cyan = "0x95E6CB"
+white = "0xFFFFFF"
 
 [colors.normal]
-black = "0x16181a"
-blue = "0x5ea1ff"
-cyan = "0x5ef1ff"
-green = "0x5eff6c"
-magenta = "0xbd5eff"
-red = "0xff6e5e"
-white = "0xffffff"
-yellow = "0xf1ff5e"
+black = "0x01060E"
+red = "0xEA6C73"
+green = "0x91B362"
+yellow = "0xF9AF4F"
+blue = "0x53BDFA"
+magenta = "0xFAE994"
+cyan = "0x90E1C6"
+white = "0xC7C7C7"
 
 [colors.primary]
-background = "0x16181a"
-foreground = "0xffffff"
+background = "0x0B0E14"
+foreground = "0xBFBDB6"
 
 [colors.selection]
 background = "0x3c4048"

@@ -9,6 +9,6 @@ in
 
   programs.alacritty = {
     enable = true;
-    package = if pkgs.stdenv.isLinux then (nixGLWrap pkgs.alacritty) else pkgs.alacritty;
+    package = if pkgs.stdenv.isLinux then (nixGLWrap pkgs.unstable.alacritty) else pkgs.unstable.alacritty;
   };
 }
