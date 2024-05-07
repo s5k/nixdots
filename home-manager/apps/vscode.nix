@@ -13,6 +13,7 @@
     mutableExtensionsDir = false;
 
     extensions = with pkgs.vscode-extensions; [
+      ms-vscode-remote.remote-ssh
       github.copilot
       github.copilot-chat
       usernamehw.errorlens

@@ -5,7 +5,7 @@ let
   nixGLWrap = (import ./nixgl.nix { inherit inputs pkgs; }).nixGLWrap;
 in
 {
-  home.file.".config/alacritty/alacritty.yml".source = ../../dotfiles/alacritty/alacritty.yml;
+  home.file.".config/alacritty/alacritty.toml".source = ../../dotfiles/alacritty/alacritty.toml;
 
   programs.alacritty = {
     enable = true;
