@@ -1,16 +1,16 @@
 #! /bin/bash
 
 # Xclip for tmux-yank
-sudo pacman -S xclip
+sudo pacman -S xclip -y
 
 # Microsoft EDGE
-yay -S microsoft-edge-stable
+yay -S microsoft-edge-stable -y
 
 # Vietnamese IME (IBus service)
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/BambooEngine/ibus-bamboo/master/archlinux/install.sh)"
 
 # Docker
-sudo pacman -S docker docker-compose
+sudo pacman -S docker docker-compose -y
 sudo systemctl enable docker.service
 sudo chmod 666 /var/run/docker.sock
 
@@ -25,3 +25,8 @@ echo "KERNEL=="uinput", MODE="0660", GROUP="uinput", OPTIONS+="static_node=uinpu
 # Add zsh to /etc/shells
 sudo sh -c "echo $(which zsh) >> /etc/shells"
 sudo chsh -s $(which zsh) $USER
+
+# install crontab
+sudo pacman -S cronie -y
+# then copy content from ~/Documents/nixdots/dotfiles/crontab/sync-ipaddress.sh to crontab
+cat ~/Documents/nixdots/dotfiles/crontab/sync-ipaddress.sh | crontab -
