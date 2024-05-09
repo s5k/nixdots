@@ -28,5 +28,4 @@ sudo chsh -s $(which zsh) $USER
 
 # install crontab
 sudo pacman -S cronie -y
-# then copy content from ~/Documents/nixdots/dotfiles/crontab/sync-ipaddress.sh to crontab
-cat ~/Documents/nixdots/dotfiles/crontab/sync-ipaddress.sh | crontab -
+cat ~/Documents/nixdots/dotfiles/crontab/.cron | crontab -
