@@ -2,6 +2,7 @@
   "workbench.colorTheme": "Ayu Dark",
   "workbench.sideBar.location": "right",
   "workbench.startupEditor": "readme",
+  "workbench.activityBar.visible": false,
   "git.enableSmartCommit": true,
 
   "editor.fontFamily": "JetBrainsMono Nerd Font",
@@ -10,6 +11,8 @@
   "editor.stickyScroll.enabled": true,
   "editor.linkedEditing": true,
   "editor.minimap.enabled": false,
+  "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?",
+  "editor.cursorSurroundingLines": 8,
 
   "editor.formatOnSave": true,
   "[json]": {
@@ -58,6 +61,26 @@
     {
       "before": ["<leader>", "f"],
       "commands": ["editor.action.wordHighlight.next"]
+    },
+    {
+      "before": ["<leader>", "|"],
+      "commands": ["workbench.action.splitEditor"]
+    },
+    {
+      "before": ["<leader>", "h"],
+      "commands": ["workbench.action.focusLeftGroup"]
+    },
+    {
+      "before": ["<leader>", "j"],
+      "commands": ["workbench.action.previousEditor"]
+    },
+    {
+      "before": ["<leader>", "k"],
+      "commands": ["workbench.action.nextEditor"]
+    },
+    {
+      "before": ["<leader>", "l"],
+      "commands": ["workbench.action.focusRightGroup"]
     },
     {
       "before": ["g", "h"],

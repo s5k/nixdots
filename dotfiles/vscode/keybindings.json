@@ -1,17 +1,29 @@
 [
   {
     "key": "ctrl+alt+1",
-    "command": "workbench.action.terminal.toggleTerminal",
-    "when": "terminal.active"
+    "command": "workbench.action.terminal.toggleTerminal"
   },
   {
     "key": "ctrl+alt+2",
-    "command": "workbench.action.quickOpenTerm"
+    "command": "workbench.action.toggleSidebarVisibility"
+  },
+  {
+    "key": "ctrl+alt+2",
+    "command": "workbench.action.findInFiles",
+    "when": "editorTextFocus"
   },
   {
     "key": "ctrl+alt+3",
-    "command": "workbench.action.terminal.focusNext",
-    "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+    "command": "workbench.action.toggleSidebarVisibility"
+  },
+  {
+    "key": "ctrl+alt+3",
+    "command": "workbench.view.scm",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+tab",
+    "command": "-workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup"
   },
   {
     "key": "h",
