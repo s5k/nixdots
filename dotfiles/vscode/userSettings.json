@@ -16,6 +16,27 @@
   "editor.glyphMargin": false,
   "editor.folding": false,
 
+  "breadcrumbs.enabled": false,
+  "window.menuBarVisibility": "toggle",
+  "workbench.activityBar.location": "hidden",
+  "editor.scrollbar.horizontal": "hidden",
+  "editor.scrollbar.vertical": "hidden",
+  "editor.renderLineHighlight": "gutter",
+  "editor.fontLigatures": true,
+  "editor.semanticHighlighting.enabled": false,
+
+  "window.titleBarStyle": "navtive",
+  "apc.electron": {
+    "titleBarStyle": "hidden",
+    "frame": false
+  },
+  "apc.font.family": "JetBrainsMono Nerd Font",
+  "apc.stylesheet": {
+    ".title-label > h2": "display: none",
+    ".editor-actions": "display: none",
+    ".pane-body": "padding: 5px"
+  },
+
   "editor.formatOnSave": true,
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
