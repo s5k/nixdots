@@ -1,51 +1,15 @@
 {
-  "workbench.colorTheme": "Ayu Dark",
-  "workbench.sideBar.location": "right",
-  "workbench.startupEditor": "readme",
-  "workbench.activityBar.visible": false,
-  "git.enableSmartCommit": true,
-
-  "editor.fontFamily": "JetBrainsMono Nerd Font",
-  "editor.inlineSuggest.enabled": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.stickyScroll.enabled": true,
-  "editor.linkedEditing": true,
-  "editor.minimap.enabled": false,
-  "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?",
-  "editor.cursorSurroundingLines": 8,
-  "editor.glyphMargin": false,
-  "editor.folding": false,
-
-  "breadcrumbs.enabled": false,
-  "window.menuBarVisibility": "toggle",
-  "workbench.activityBar.location": "hidden",
-  "editor.scrollbar.horizontal": "hidden",
-  "editor.scrollbar.vertical": "hidden",
-  "editor.renderLineHighlight": "gutter",
-  "editor.fontLigatures": true,
-  "editor.semanticHighlighting.enabled": false,
-
-  "window.titleBarStyle": "navtive",
-  "apc.electron": {
-    "titleBarStyle": "hidden",
-    "frame": false
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "apc.font.family": "JetBrainsMono Nerd Font",
-  "apc.stylesheet": {
-    ".title-label > h2": "display: none",
-    ".editor-actions": "display: none",
-    ".pane-body": "padding: 5px"
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-
-  "editor.formatOnSave": true,
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[nix]": {
     "editor.defaultFormatter": "B4dM4n.nixpkgs-fmt"
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -53,26 +17,78 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[javascriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "apc.electron": {
+    "frame": false,
+    "titleBarStyle": "hidden"
   },
-
+  "apc.font.family": "JetBrainsMono Nerd Font",
+  "apc.stylesheet": {
+    ".editor-actions": "display: none",
+    ".pane-body": "padding: 5px",
+    ".title-label > h2": "display: none"
+  },
+  "breadcrumbs.enabled": false,
+  "editor.cursorSurroundingLines": 8,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.fontFamily": "JetBrainsMono Nerd Font",
+  "editor.fontLigatures": true,
+  "editor.formatOnSave": true,
+  "editor.glyphMargin": false,
+  "editor.inlineSuggest.enabled": true,
+  "editor.lineDecorationsWidth": 0,
+  "editor.linkedEditing": true,
+  "editor.minimap.enabled": false,
+  "editor.renderLineHighlight": "gutter",
+  "editor.scrollbar.horizontal": "hidden",
+  "editor.scrollbar.vertical": "hidden",
+  "editor.semanticHighlighting.enabled": false,
+  "editor.stickyScroll.enabled": true,
+  "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?",
+  "extensions.autoCheckUpdates": false,
+  "git.enableSmartCommit": true,
+  "github.copilot.enable": {
+    "*": true,
+    "markdown": false,
+    "plaintext": true,
+    "scminput": false
+  },
+  "security.workspace.trust.emptyWindow": false,
+  "security.workspace.trust.enabled": false,
+  "security.workspace.trust.untrustedFiles": "open",
+  "terminal.integrated.defaultProfile.linux": "tmux-shell",
+  "terminal.integrated.defaultProfile.osx": "tmux-shell",
+  "terminal.integrated.profiles.linux": {
+    "tmux-shell": {
+      "args": ["new-session", "-A", "-s", "vscode:${workspaceFolder}"],
+      "path": "tmux"
+    }
+  },
+  "terminal.integrated.profiles.osx": {
+    "tmux-shell": {
+      "args": ["new-session", "-A", "-s", "vscode:${workspaceFolder}"],
+      "path": "tmux"
+    }
+  },
   "typescript.preferences.importModuleSpecifier": "non-relative",
-
+  "update.mode": "none",
   "vim.easymotion": true,
   "vim.foldfix": true,
-  "vim.incsearch": true,
-  "vim.hlsearch": true,
-  "vim.smartRelativeLine": true,
-  "vim.highlightedyank.enable": true,
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-c>": false,
+    "<C-n>": false,
+    "<C-p>": false,
+    "<C-w>": false
+  },
   "vim.highlightedyank.color": "rgba(230, 97, 89, 0.7)",
+  "vim.highlightedyank.enable": true,
   "vim.highlightedyank.textColor": "white",
-  "vim.useSystemClipboard": true,
-  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.incsearch": true,
   "vim.insertModeKeyBindings": [
     {
-      "before": ["j", "k"],
-      "after": ["<Esc>"]
+      "after": ["<Esc>"],
+      "before": ["j", "k"]
     }
   ],
   "vim.leader": "<space>",
@@ -105,7 +121,6 @@
       "before": ["<leader>", "l"],
       "commands": ["workbench.action.focusRightGroup"]
     },
-
     {
       "before": ["u"],
       "commands": ["undo"]
@@ -114,7 +129,6 @@
       "before": ["U"],
       "commands": ["redo"]
     },
-
     {
       "before": ["g", "p", "d"],
       "commands": ["editor.action.peekDefinition"]
@@ -152,12 +166,12 @@
       "commands": ["editor.action.quickFix"]
     },
     {
-      "before": ["<C-d>"],
-      "after": ["1", "5", "g", "j", "z", "z"]
+      "after": ["1", "5", "g", "j", "z", "z"],
+      "before": ["<C-d>"]
     },
     {
-      "before": ["<C-u>"],
-      "after": ["1", "5", "g", "k", "z", "z"]
+      "after": ["1", "5", "g", "k", "z", "z"],
+      "before": ["<C-u>"]
     },
     {
       "before": ["K"],
@@ -165,36 +179,14 @@
       "silent": true
     }
   ],
-  "vim.handleKeys": {
-    "<C-n>": false,
-    "<C-a>": false,
-    "<C-w>": false,
-    "<C-c>": false,
-    "<C-p>": false
-  },
-
-  "github.copilot.enable": {
-    "*": true,
-    "plaintext": true,
-    "markdown": false,
-    "scminput": false
-  },
-  "terminal.integrated.profiles.osx": {
-    "tmux-shell": {
-      "path": "tmux",
-      "args": ["new-session", "-A", "-s", "vscode:${workspaceFolder}"]
-    }
-  },
-  "terminal.integrated.profiles.linux": {
-    "tmux-shell": {
-      "path": "tmux",
-      "args": ["new-session", "-A", "-s", "vscode:${workspaceFolder}"]
-    }
-  },
-  "terminal.integrated.defaultProfile.osx": "tmux-shell",
-  "terminal.integrated.defaultProfile.linux": "tmux-shell",
-
-  "security.workspace.trust.untrustedFiles": "open",
-  "security.workspace.trust.emptyWindow": false,
-  "security.workspace.trust.enabled": false
+  "vim.smartRelativeLine": true,
+  "vim.useCtrlKeys": true,
+  "vim.useSystemClipboard": true,
+  "window.menuBarVisibility": "toggle",
+  "window.titleBarStyle": "native",
+  "workbench.activityBar.location": "hidden",
+  "workbench.activityBar.visible": false,
+  "workbench.colorTheme": "Ayu Dark",
+  "workbench.sideBar.location": "right",
+  "workbench.startupEditor": "readme"
 }
