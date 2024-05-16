@@ -6,7 +6,6 @@
 ;; - pressing another key on the same half of the keyboard
 ;;   as the home row mod will activate an early tap action
 (defcfg
-    linux-dev /dev/input/by-id/usb-Compx_2.4G_Wireless_Receiver-event-kbd
     process-unmapped-keys yes
 )
 
@@ -39,18 +38,18 @@
 
 (deflayer base
   XX  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX  XX  XX  XX
-  XX  q    w    e    r    t    y    u    i    o    p   XX  XX  XX
-  XX  @a   @s   @d   @f   g    h    @j   @k   @l   @;  XX  XX
-  XX  z    x    c    v    b    n    m    ,    .    /   XX
+  XX  q    w    e    r    t    y    u    i    o    p  XX  XX  XX
+  XX  @a   @s   @d   @f   g    h    @j   @k   @l   @; XX  XX
+  XX  z    x    c    v    b    n    m    ,    .    /  XX
   XX  XX   @num           @nav            @sym XX  XX  
 )
 
 ;; Symbols layer
 (deflayer symbols
-  XX  XX    XX   XX   XX   XX   XX   XX   XX   XX   XX  XX  XX  XX
-  XX  S-[   S-]  [    ]    S-\  \    +    =    -    S-- XX  XX  XX
-  XX  S-grv grv  '    S-'  _    lft  down up   rght _   XX  XX
-  XX  _     _    _    _    _    _    _    _    _    _   XX
+  XX  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX  XX  XX  XX
+  XX  S-[   S-]    [    ]    S-\    _    +    =    -    S-- XX XX XX
+  XX  S-grv    grv   '    S-'    _    lft  down up   rght _ XX XX
+  XX  _    _    _    _    _    _    _    _    _    _ XX
   XX  XX    _              _              _ XX XX
 )
 
@@ -58,18 +57,18 @@
 ;;  - left: arrows, Tab/Shift-Tab, one-hand shortcuts (Ctrl-AZXCV)
 ;;  - right: numpad
 (deflayer numnav
-  XX  XX   XX   XX   XX   XX      XX   XX   XX   XX   XX  XX  XX  XX
-  XX  tab  home up   end  pgup    /    7    8    9    XX  XX  XX  XX
-  XX  C-a  lft  down rght pgdn    -    4    5    6    0   XX  XX
-  XX  C-z  C-x  C-c  C-v  S-tab   ,    1    2    3    .   XX
+  XX  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX  XX  XX  XX
+  XX  tab  home up   end  pgup    /  7  8  9  XX XX XX XX
+  XX  C-a  lft  down rght  pgdn    -  4  5  6  0 XX XX
+  XX  C-z  C-x  C-c  C-v  S-tab   ,  1  2  3  . XX
   XX  XX   del            _             esc XX XX
 )
 
 ;; Numrow layer
 (deflayer numrow
-  XX  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX    XX  XX
-  XX  S-1  S-2  S-3  S-4  S-5       S-6  S-7  S-8  S-9  S-0   XX  XX XX
-  XX  1    2    3    4    5         6    7    8    9    0     XX  XX
+  XX  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX  XX  XX  XX
+  XX  S-1  S-2  S-3  S-4  S-5       S-6  S-7  S-8  S-9  S-0 XX XX XX
+  XX  1    2    3    4    5         6    7    8    9    0 XX XX
   XX  XX   XX   XX   XX   XX        XX   XX   XX   XX   XX XX
   XX  XX        @num          S-spc           @sym XX XX
 )
@@ -96,12 +95,12 @@
     (on-idle-fakekey to-base tap 20)
   )
 
-  a (tap-hold-release-keys $tap-time $pinky-time (multi a @tap) lmet $left-hand-keys)
+  a (tap-hold-release-keys $tap-time $pinky-time (multi a @tap) lctl $left-hand-keys)
   s (tap-hold-release-keys $tap-time $hold-time (multi s @tap) lalt $left-hand-keys)
-  d (tap-hold-release-keys $tap-time $hold-time (multi d @tap) lctl $left-hand-keys)
+  d (tap-hold-release-keys $tap-time $hold-time (multi d @tap) lmet $left-hand-keys)
   f (tap-hold-release-keys $tap-time $hold-time (multi f @tap) lsft $left-hand-keys)
   j (tap-hold-release-keys $tap-time $hold-time (multi j @tap) rsft $right-hand-keys)
-  k (tap-hold-release-keys $tap-time $hold-time (multi k @tap) rctl $right-hand-keys)
+  k (tap-hold-release-keys $tap-time $hold-time (multi k @tap) rmet $right-hand-keys)
   l (tap-hold-release-keys $tap-time $hold-time (multi l @tap) ralt $right-hand-keys)
-  ; (tap-hold-release-keys $tap-time $hold-time (multi ; @tap) rmet $right-hand-keys)
+  ; (tap-hold-release-keys $tap-time $hold-time (multi ; @tap) rctl $right-hand-keys)
 )
