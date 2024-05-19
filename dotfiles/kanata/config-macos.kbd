@@ -22,7 +22,8 @@
   ;; fingers faster.
   tap-time 200
   hold-time 150
-  pinky-time 200
+  pinky-tap-time 100
+  pinky-hold-time 300
 
   left-hand-keys (
     q w e r t
@@ -58,7 +59,7 @@
 ;;  - right: numpad
 (deflayer numnav
   XX  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX  XX  XX  XX
-  XX  tab  home up   end  pgup    /  7  8  9  XX XX XX XX
+  XX  tab  esc  up   end  pgup    /  7  8  9  XX XX XX XX
   XX  C-a  lft  down rght  pgdn    -  4  5  6  0 XX XX
   XX  C-z  C-x  C-c  C-v  S-tab   ,  1  2  3  . XX
   XX  XX   del            _             esc XX XX
@@ -95,7 +96,7 @@
     (on-idle-fakekey to-base tap 20)
   )
 
-  a (tap-hold-release-keys $tap-time $pinky-time (multi a @tap) lctl $left-hand-keys)
+  a (tap-hold-release-keys $pinky-tap-time $pinky-hold-time (multi a @tap) lctl $left-hand-keys)
   s (tap-hold-release-keys $tap-time $hold-time (multi s @tap) lalt $left-hand-keys)
   d (tap-hold-release-keys $tap-time $hold-time (multi d @tap) lmet $left-hand-keys)
   f (tap-hold-release-keys $tap-time $hold-time (multi f @tap) lsft $left-hand-keys)
