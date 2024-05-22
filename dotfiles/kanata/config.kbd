@@ -17,6 +17,39 @@
   lsft z    x    c    v    b    n    m    ,    .    /  rsft
   lctl  lmet   lalt           spc            ralt  rmet  rctl
 )
+
+(deflayer base
+  XX  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX  XX  XX  XX
+  XX  @q   @w   @e   @r    t    y   @u   @i   @o   @p   XX  XX  XX
+  XX  @ma  @ms  @md  @mf   g    h   @mj  @mk  @ml  @m;  XX  XX
+  XX  z    x    c    v    b    n    m    ,    .    /   XX
+  XX  XX   @nav           spc            @num XX  XX  
+)
+
+(deflayer navrow
+  XX  XX    XX    XX    XX    XX     XX   XX   XX   XX   XX    XX  XX  XX
+  XX  M-1   M-2   M-3   M-4   M-5    _    _    _    _    _     XX  XX  XX
+  XX  C-A-1 C-A-2 C-A-3 C-A-4 C-A-5  lft  down up   rght _     XX  XX
+  XX  XX    XX    XX    XX    XX     XX   XX   XX   XX   XX  XX
+  XX  XX    _              _              _    XX XX
+)
+
+(deflayer numrow
+  XX  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX    XX  XX
+  XX  S-1  S-2  S-3  S-4  S-5       S-6  S-7  S-8  S-9  S-0   XX  XX XX
+  XX  1    2    3    4    5         6    7    8    9    0     XX  XX
+  XX  XX   XX   XX   XX   XX        XX   XX   XX   XX   XX XX
+  XX  XX        @num          S-spc           @nav XX XX
+)
+
+(deflayer nomods
+  XX  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX  XX  XX  XX
+  XX  _    _    _    _    _    _    _    _    _    _ XX  XX  XX
+  XX  a    s    d    f    g    h    j    k    l    ; XX XX
+  XX  _    _    _    _    _    _    _    _    _    _ XX
+  XX  XX        _              _              _    XX XX
+)
+
 (defvar
   ;; Note: consider using different time values for your different fingers.
   ;; For example, your pinkies might be slower to release keys and index
@@ -38,71 +71,79 @@
   )
 )
 
-(deflayer base
-  XX  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX  XX  XX  XX
-  XX  q    w    e    r    t    y    u    i    o    p   XX  XX  XX
-  XX  @a   @s   @d   @f   g    h    @j   @k   @l   @;  XX  XX
-  XX  z    x    c    v    b    n    m    ,    .    /   XX
-  XX  XX   @num           @nav            @sym XX  XX  
-)
-
-;; Symbols layer
-(deflayer symbols
-  XX  XX    XX   XX   XX   XX   XX   XX   XX   XX   XX  XX  XX  XX
-  XX  S-[   S-]  [    ]    S-\  \    +    =    -    S-- XX  XX  XX
-  XX  S-grv grv  '    S-'  _    lft  down up   rght _   XX  XX
-  XX  _     _    _    _    _    _    _    _    _    _   XX
-  XX  XX    _              _              _ XX XX
-)
-
-;; Navigation layer:
-;;  - left: arrows, Tab/Shift-Tab, one-hand shortcuts (Ctrl-AZXCV)
-;;  - right: numpad
-(deflayer numnav
-  XX  XX   XX   XX   XX   XX      XX   XX   XX   XX   XX  XX  XX  XX
-  XX  tab  esc up   end  pgup    /    7    8    9    XX  XX  XX  XX
-  XX  C-a  lft  down rght pgdn    -    4    5    6    0   XX  XX
-  XX  C-z  C-x  C-c  C-v  S-tab   ,    1    2    3    .   XX
-  XX  XX   del            _             esc XX XX
-)
-
-;; Numrow layer
-(deflayer numrow
-  XX  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX    XX  XX
-  XX  S-1  S-2  S-3  S-4  S-5       S-6  S-7  S-8  S-9  S-0   XX  XX XX
-  XX  1    2    3    4    5         6    7    8    9    0     XX  XX
-  XX  XX   XX   XX   XX   XX        XX   XX   XX   XX   XX XX
-  XX  XX        @num          S-spc           @sym XX XX
-)
-
-;; Nomods layer
-(deflayer nomods
-  XX  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX  XX  XX  XX
-  XX  _    _    _    _    _    _    _    _    _    _ XX  XX  XX
-  XX  a    s    d    f    g    h    j    k    l    ; XX XX
-  XX  _    _    _    _    _    _    _    _    _    _ XX
-  XX  XX        _              _              _    XX XX
-)
-
 (deffakekeys
   to-base (layer-switch base)
 )
 (defalias
-  num (tap-hold-press 200 200 bspc (layer-toggle numrow))
-  nav (tap-hold 200 300 spc (layer-toggle numnav))
-  sym (tap-hold-press 200 200 ret (layer-toggle symbols))
+  nav (tap-hold-press 200 200 bspc (layer-toggle navrow))
+  num (tap-hold-press 200 200 ret (layer-toggle numrow))
+
+  q (chord symbol_combos q)
+  w (chord symbol_combos w)
+  e (chord symbol_combos e)
+  r (chord symbol_combos r)
+  a (chord symbol_combos a)
+  s (chord symbol_combos s)
+  d (chord symbol_combos d)
+  f (chord symbol_combos f)
+
+
+  u (chord symbol_combos u)
+  i (chord symbol_combos i)
+  o (chord symbol_combos o)
+  p (chord symbol_combos p)
+  j (chord symbol_combos j)
+  k (chord symbol_combos k)
+  l (chord symbol_combos l)
+  ; (chord symbol_combos ;)
   
   tap (multi
     (layer-switch nomods)
     (on-idle-fakekey to-base tap 20)
   )
 
-  a (tap-hold-release-keys $pinky-tap-time $pinky-hold-time (multi a @tap) lmet $left-hand-keys)
-  s (tap-hold-release-keys $tap-time $hold-time (multi s @tap) lalt $left-hand-keys)
-  d (tap-hold-release-keys $tap-time $hold-time (multi d @tap) lctl $left-hand-keys)
-  f (tap-hold-release-keys $tap-time $hold-time (multi f @tap) lsft $left-hand-keys)
-  j (tap-hold-release-keys $tap-time $hold-time (multi j @tap) rsft $right-hand-keys)
-  k (tap-hold-release-keys $tap-time $hold-time (multi k @tap) rctl $right-hand-keys)
-  l (tap-hold-release-keys $tap-time $hold-time (multi l @tap) ralt $right-hand-keys)
-  ; (tap-hold-release-keys $tap-time $hold-time (multi ; @tap) rmet $right-hand-keys)
+  ma (tap-hold-release-keys $pinky-tap-time $pinky-hold-time (multi @a @tap) lmet $left-hand-keys)
+  ms (tap-hold-release-keys $tap-time $hold-time (multi @s @tap) lalt $left-hand-keys)
+  md (tap-hold-release-keys $tap-time $hold-time (multi @d @tap) lctl $left-hand-keys)
+  mf (tap-hold-release-keys $tap-time $hold-time (multi @f @tap) lsft $left-hand-keys)
+
+  mj (tap-hold-release-keys $tap-time $hold-time (multi @j @tap) lsft $right-hand-keys)
+  mk (tap-hold-release-keys $tap-time $hold-time (multi @k @tap) lctl $right-hand-keys)
+  ml (tap-hold-release-keys $tap-time $hold-time (multi @l @tap) lalt $right-hand-keys)
+  m; (tap-hold-release-keys $pinky-tap-time $pinky-hold-time (multi @; @tap) lmet $right-hand-keys)
+)
+
+(defchords symbol_combos 40
+    (q) q
+    (w) w
+    (e) e
+    (r) r
+    (a) a
+    (s) s
+    (d) d
+    (f) f
+    (q w) S-[
+    (w e) S-]
+    (e r) S-\
+    (a s) [
+    (s d) ]
+    (d f) tab
+
+
+    (u) u
+    (i) i
+    (o) o
+    (p) p
+    (j) j
+    (k) k
+    (l) l
+    (;) ;
+    (u i) S-=
+    (i o) =
+    (o p) -
+    (j k) esc
+    (j i) '
+    (j l) S-'
+    (k l) S--
+    (l ;) \
 )
