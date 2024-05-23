@@ -6,6 +6,7 @@
 ;; - pressing another key on the same half of the keyboard
 ;;   as the home row mod will activate an early tap action
 (defcfg
+    ;;linux-dev /dev/input/by-id/usb-Compx_2.4G_Wireless_Receiver-event-kbd
     process-unmapped-keys yes
 )
 
@@ -16,6 +17,31 @@
   lsft z    x    c    v    b    n    m    ,    .    /  rsft
   lctl  lmet   lalt           spc            ralt  rmet  rctl
 )
+
+(deflayer base
+  XX  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX  XX  XX  XX
+  XX  @q   @w   @e   @r   @t   @y   @u   @i   @o   @p   XX  XX  XX
+  XX  @ma  @ms  @md  @mf  @g   @h   @mj  @mk  @ml  @m;  XX  XX
+  XX  z    @x   @c   @v    b   @n   @m   @,   @.    /   XX
+  XX  XX   @leftnav           spc            @rightnav XX  XX  
+)
+
+(deflayer navrow
+  XX  XX    XX    XX    XX    XX     XX   XX   XX   XX   XX    XX  XX  XX
+  XX  1     2     3     4     5      6    7    8    9    0     XX  XX  XX
+  XX  C-A-1 C-A-2 C-A-3 C-A-4 C-A-5  lft  down up   rght _     XX  XX
+  XX  C-1   C-2   C-3   C-4   C-5     XX   XX   XX   XX   XX  XX
+  XX  XX    _              _              _    XX XX
+)
+
+(deflayer no-modifier-mods
+  XX  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX  XX  XX  XX
+  XX  @q   @w   @e   @r   @t   @y   @u   @i   @o   @p  XX  XX  XX
+  XX  @a   @s   @d   @f   @g   @h   @j   @k   @l   @;  XX  XX
+  XX  z    @x   @c   @v    b   @n   @m   @,   @.    /   XX
+  XX  XX        _              _              _    XX XX
+)
+
 (defvar
   ;; Note: consider using different time values for your different fingers.
   ;; For example, your pinkies might be slower to release keys and index
@@ -37,71 +63,124 @@
   )
 )
 
-(deflayer base
-  XX  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX  XX  XX  XX
-  XX  q    w    e    r    t    y    u    i    o    p  XX  XX  XX
-  XX  @a   @s   @d   @f   g    h    @j   @k   @l   @; XX  XX
-  XX  z    x    c    v    b    n    m    ,    .    /  XX
-  XX  XX   @num           @nav            @sym XX  XX  
-)
-
-;; Symbols layer
-(deflayer symbols
-  XX  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX  XX  XX  XX
-  XX  S-[   S-]    [    ]    S-\    _    +    =    -    S-- XX XX XX
-  XX  S-grv    grv   '    S-'    _    lft  down up   rght _ XX XX
-  XX  _    _    _    _    _    _    _    _    _    _ XX
-  XX  XX    _              _              _ XX XX
-)
-
-;; Navigation layer:
-;;  - left: arrows, Tab/Shift-Tab, one-hand shortcuts (Ctrl-AZXCV)
-;;  - right: numpad
-(deflayer numnav
-  XX  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX  XX  XX  XX
-  XX  tab  esc  up   end  pgup    /  7  8  9  XX XX XX XX
-  XX  C-a  lft  down rght  pgdn    -  4  5  6  0 XX XX
-  XX  C-z  C-x  C-c  C-v  S-tab   ,  1  2  3  . XX
-  XX  XX   del            _             esc XX XX
-)
-
-;; Numrow layer
-(deflayer numrow
-  XX  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX  XX  XX  XX
-  XX  S-1  S-2  S-3  S-4  S-5       S-6  S-7  S-8  S-9  S-0 XX XX XX
-  XX  1    2    3    4    5         6    7    8    9    0 XX XX
-  XX  XX   XX   XX   XX   XX        XX   XX   XX   XX   XX XX
-  XX  XX        @num          S-spc           @sym XX XX
-)
-
-;; Nomods layer
-(deflayer nomods
-  XX  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX  XX  XX  XX
-  XX  _    _    _    _    _    _    _    _    _    _ XX  XX  XX
-  XX  a    s    d    f    g    h    j    k    l    ; XX XX
-  XX  _    _    _    _    _    _    _    _    _    _ XX
-  XX  XX        _              _              _    XX XX
-)
-
 (deffakekeys
   to-base (layer-switch base)
 )
 (defalias
-  num (tap-hold-press 200 200 bspc (layer-toggle numrow))
-  nav (tap-hold 200 300 spc (layer-toggle numnav))
-  sym (tap-hold-press 200 200 ret (layer-toggle symbols))
+  leftnav (tap-hold-press 200 200 bspc (layer-toggle navrow))
+  rightnav (tap-hold-press 200 200 ret (layer-toggle navrow))
+
+  q (chord symbol_combos q)
+  w (chord symbol_combos w)
+  e (chord symbol_combos e)
+  r (chord symbol_combos r)
+  t (chord symbol_combos t)
+  a (chord symbol_combos a)
+  s (chord symbol_combos s)
+  d (chord symbol_combos d)
+  f (chord symbol_combos f)
+  g (chord symbol_combos g)
+  x (chord symbol_combos x)
+  c (chord symbol_combos c)
+  v (chord symbol_combos v)
+
+
+  y (chord symbol_combos y)
+  u (chord symbol_combos u)
+  i (chord symbol_combos i)
+  o (chord symbol_combos o)
+  p (chord symbol_combos p)
+  h (chord symbol_combos h)
+  j (chord symbol_combos j)
+  k (chord symbol_combos k)
+  l (chord symbol_combos l)
+  ; (chord symbol_combos ;)
+  n (chord symbol_combos n)
+  m (chord symbol_combos m)
+  , (chord symbol_combos ,)
+  . (chord symbol_combos .)
   
   tap (multi
-    (layer-switch nomods)
+    (layer-switch no-modifier-mods)
     (on-idle-fakekey to-base tap 20)
   )
 
-  a (tap-hold-release-keys $pinky-tap-time $pinky-hold-time (multi a @tap) lctl $left-hand-keys)
-  s (tap-hold-release-keys $tap-time $hold-time (multi s @tap) lalt $left-hand-keys)
-  d (tap-hold-release-keys $tap-time $hold-time (multi d @tap) lmet $left-hand-keys)
-  f (tap-hold-release-keys $tap-time $hold-time (multi f @tap) lsft $left-hand-keys)
-  j (tap-hold-release-keys $tap-time $hold-time (multi j @tap) rsft $right-hand-keys)
-  k (tap-hold-release-keys $tap-time $hold-time (multi k @tap) rmet $right-hand-keys)
-  l (tap-hold-release-keys $tap-time $hold-time (multi l @tap) ralt $right-hand-keys)
-  ; (tap-hold-release-keys $tap-time $hold-time (multi ; @tap) rctl $right-hand-keys)
+  ma (tap-hold-release-keys $pinky-tap-time $pinky-hold-time (multi @a @tap) lctl $left-hand-keys)
+  ms (tap-hold-release-keys $tap-time $hold-time (multi @s @tap) lalt $left-hand-keys)
+  md (tap-hold-release-keys $tap-time $hold-time (multi @d @tap) lmet $left-hand-keys)
+  mf (tap-hold-release-keys $tap-time $hold-time (multi @f @tap) lsft $left-hand-keys)
+
+  mj (tap-hold-release-keys $tap-time $hold-time (multi @j @tap) lsft $right-hand-keys)
+  mk (tap-hold-release-keys $tap-time $hold-time (multi @k @tap) lmmt $right-hand-keys)
+  ml (tap-hold-release-keys $tap-time $hold-time (multi @l @tap) lalt $right-hand-keys)
+  m; (tap-hold-release-keys $pinky-tap-time $pinky-hold-time (multi @; @tap) lctl $right-hand-keys)
+)
+
+(defchords symbol_combos 40
+    (q) q
+    (w) w
+    (e) e
+    (r) r
+    (t) t
+    (a) a
+    (s) s
+    (d) d
+    (f) f
+    (g) g
+    (x) x
+    (c) c
+    (v) v
+
+    (y) y
+    (u) u
+    (i) i
+    (o) o
+    (p) p
+    (h) h
+    (j) j
+    (k) k
+    (l) l
+    (;) ;
+    (n) n
+    (m) m
+    (,) ,
+    (.) .
+
+    ;; left horizontal
+    (q w) S-1
+    (w e) [
+    (e r) ]
+    (a s) S-=
+    (s d) =
+    (d f) tab
+    (x c) S-[
+    (c v) S-]
+
+    ;; left vertical
+    (w s) S-2
+    (e d) S-3
+    (r f) S-4
+    (t g) S-5
+    (e f) S-- ;; _
+    (d c) '
+
+
+    ;; right horizontal
+    (u i) S-9 
+    (i o) S-0
+    (o p) S-grv
+    (h j) S-\
+    (j k) esc
+    (k l) -
+    (l ;) grv
+    (m ,) S-,
+    (, .) S-.
+
+    ;; right vertical
+    (y h) S-6
+    (u j) S-7
+    (i k) S-8
+    (o l) \
+    (j i) S-/ ;; ?
+    (k m) S-'
 )

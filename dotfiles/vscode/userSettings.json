@@ -17,16 +17,6 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "apc.electron": {
-    "frame": false,
-    "titleBarStyle": "hidden"
-  },
-  "apc.font.family": "JetBrainsMono Nerd Font",
-  "apc.stylesheet": {
-    ".editor-actions": "display: none",
-    ".pane-body": "padding: 5px",
-    ".title-label > h2": "display: none"
-  },
   "breadcrumbs.enabled": false,
   "editor.cursorSurroundingLines": 8,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -182,12 +172,11 @@
   "vim.smartRelativeLine": true,
   "vim.useCtrlKeys": true,
   "vim.useSystemClipboard": true,
-  "window.menuBarVisibility": "visible",
-  "window.titleBarStyle": "custom",
   "window.customMenuBarAltFocus": false,
   "window.enableMenuBarMnemonics": false,
+  "window.menuBarVisibility": "visible",
+  "window.titleBarStyle": "custom",
   "workbench.activityBar.location": "hidden",
-  "workbench.activityBar.visible": false,
   "workbench.colorTheme": "Ayu Dark",
   "workbench.sideBar.location": "right",
   "workbench.startupEditor": "readme"

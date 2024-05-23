@@ -52,12 +52,6 @@
         version = "0.0.2";
         sha256 = "dIarW3cbC6mdL0Gmito7e2D32AszUvNFyG4WFOxyahw=";
       }
-      {
-        name = "apc-extension";
-        publisher = "drcika";
-        version = "0.3.9";
-        sha256 = "VMUICGvAFWrG/uL3aGKNUIt1ARovc84TxkjgSkXuoME=";
-      }
     ];
 
     keybindings = builtins.fromJSON (builtins.readFile ../../dotfiles/vscode/keybindings.json);
