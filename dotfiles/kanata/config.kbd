@@ -150,11 +150,9 @@
     (q w) S-1
     (w e) [
     (e r) ]
-    (r t) '
     (a s) S-=
     (s d) =
     (d f) tab
-    (f g) S-'
     (x c) S-[
     (c v) S-]
 
@@ -164,6 +162,7 @@
     (r f) S-4
     (t g) S-5
     (e f) S-- ;; _
+    (d c) '
 
 
     ;; right horizontal
@@ -183,4 +182,5 @@
     (i k) S-8
     (o l) \
     (j i) S-/ ;; ?
+    (k m) S-'
 )
