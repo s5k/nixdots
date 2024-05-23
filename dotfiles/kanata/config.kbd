@@ -6,7 +6,7 @@
 ;; - pressing another key on the same half of the keyboard
 ;;   as the home row mod will activate an early tap action
 (defcfg
-    linux-dev /dev/input/by-id/usb-Compx_2.4G_Wireless_Receiver-event-kbd
+    ;;linux-dev /dev/input/by-id/usb-Compx_2.4G_Wireless_Receiver-event-kbd
     process-unmapped-keys yes
 )
 
@@ -20,26 +20,18 @@
 
 (deflayer base
   XX  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX  XX  XX  XX
-  XX  @q   @w   @e   @r    t    y   @u   @i   @o   @p   XX  XX  XX
-  XX  @ma  @ms  @md  @mf   g    h   @mj  @mk  @ml  @m;  XX  XX
-  XX  z    x    c    v    b    n    m    ,    .    /   XX
-  XX  XX   @nav           spc            @num XX  XX  
+  XX  @q   @w   @e   @r   @t   @y   @u   @i   @o   @p   XX  XX  XX
+  XX  @ma  @ms  @md  @mf  @g   @h   @mj  @mk  @ml  @m;  XX  XX
+  XX  z    @x   @c   @v    b   @n   @m   @,   @.    /   XX
+  XX  XX   @leftnav           spc            @rightnav XX  XX  
 )
 
 (deflayer navrow
   XX  XX    XX    XX    XX    XX     XX   XX   XX   XX   XX    XX  XX  XX
-  XX  M-1   M-2   M-3   M-4   M-5    _    _    _    _    _     XX  XX  XX
+  XX  1     2     3     4     5      6    7    8    9    0     XX  XX  XX
   XX  C-A-1 C-A-2 C-A-3 C-A-4 C-A-5  lft  down up   rght _     XX  XX
-  XX  XX    XX    XX    XX    XX     XX   XX   XX   XX   XX  XX
+  XX  M-1   M-2   M-3   M-4   M-5     XX   XX   XX   XX   XX  XX
   XX  XX    _              _              _    XX XX
-)
-
-(deflayer numrow
-  XX  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX    XX  XX
-  XX  S-1  S-2  S-3  S-4  S-5       S-6  S-7  S-8  S-9  S-0   XX  XX XX
-  XX  1    2    3    4    5         6    7    8    9    0     XX  XX
-  XX  XX   XX   XX   XX   XX        XX   XX   XX   XX   XX XX
-  XX  XX        @nav          S-spc           @num XX XX
 )
 
 (deflayer nomods
@@ -75,27 +67,38 @@
   to-base (layer-switch base)
 )
 (defalias
-  nav (tap-hold-press 200 200 bspc (layer-toggle navrow))
-  num (tap-hold-press 200 200 ret (layer-toggle numrow))
+  leftnav (tap-hold-press 200 200 bspc (layer-toggle navrow))
+  rightnav (tap-hold-press 200 200 ret (layer-toggle navrow))
 
   q (chord symbol_combos q)
   w (chord symbol_combos w)
   e (chord symbol_combos e)
   r (chord symbol_combos r)
+  t (chord symbol_combos t)
   a (chord symbol_combos a)
   s (chord symbol_combos s)
   d (chord symbol_combos d)
   f (chord symbol_combos f)
+  g (chord symbol_combos g)
+  x (chord symbol_combos x)
+  c (chord symbol_combos c)
+  v (chord symbol_combos v)
 
 
+  y (chord symbol_combos y)
   u (chord symbol_combos u)
   i (chord symbol_combos i)
   o (chord symbol_combos o)
   p (chord symbol_combos p)
+  h (chord symbol_combos h)
   j (chord symbol_combos j)
   k (chord symbol_combos k)
   l (chord symbol_combos l)
   ; (chord symbol_combos ;)
+  n (chord symbol_combos n)
+  m (chord symbol_combos m)
+  , (chord symbol_combos ,)
+  . (chord symbol_combos .)
   
   tap (multi
     (layer-switch nomods)
@@ -118,32 +121,68 @@
     (w) w
     (e) e
     (r) r
+    (t) t
     (a) a
     (s) s
     (d) d
     (f) f
-    (q w) S-[
-    (w e) S-]
-    (e r) S-\
-    (a s) [
-    (s d) ]
-    (d f) tab
+    (g) g
+    (x) x
+    (c) c
+    (v) v
 
-
+    (y) y
     (u) u
     (i) i
     (o) o
     (p) p
+    (h) h
     (j) j
     (k) k
     (l) l
     (;) ;
-    (u i) S-=
-    (i o) =
-    (o p) -
+    (n) n
+    (m) m
+    (,) ,
+    (.) .
+
+    ;; left horizontal
+    (q w) S-1
+    (w e) [
+    (e r) ]
+    (a s) S-=
+    (s d) =
+    (d f) tab
+    (x c) S-[
+    (c v) S-]
+
+    ;; left vertical
+    (w s) S-2
+    (e d) S-3
+    (r f) S-4
+    (t g) S-5
+    (d c) grv
+    (f v) S-grv
+    (e f) S-- ;; _
+
+
+    ;; right horizontal
+    (u i) S-9 
+    (i o) S-0
+    (o p) S-grv
+    (h j) S-\
     (j k) esc
-    (j i) '
-    (j l) S-'
-    (k l) S--
-    (l ;) \
+    (k l) -
+    (l ;) S--
+    (m ,) S-,
+    (, .) S-.
+
+    ;; right vertical
+    (y h) S-6
+    (u j) S-7
+    (i k) S-8
+    (o l) \
+    (j n) '
+    (k m) S-'
+    (j i) S-/ ;; ?
 )
