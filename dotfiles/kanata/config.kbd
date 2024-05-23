@@ -161,8 +161,6 @@
     (e d) S-3
     (r f) S-4
     (t g) S-5
-    (d c) grv
-    (f v) S-grv
     (e f) S-- ;; _
 
 
@@ -173,7 +171,7 @@
     (h j) S-\
     (j k) esc
     (k l) -
-    (l ;) S--
+    (l ;) grv
     (m ,) S-,
     (, .) S-.
 
