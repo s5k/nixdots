@@ -34,11 +34,11 @@
   XX  XX    _              _              _    XX XX
 )
 
-(deflayer nomods
+(deflayer no-modifier-mods
   XX  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX  XX  XX  XX
-  XX  _    _    _    _    _    _    _    _    _    _ XX  XX  XX
-  XX  a    s    d    f    g    h    j    k    l    ; XX XX
-  XX  _    _    _    _    _    _    _    _    _    _ XX
+  XX  @q   @w   @e   @r   @t   @y   @u   @i   @o   @p  XX  XX  XX
+  XX  @a   @s   @d   @f   @g   @h   @j   @k   @l   @;  XX  XX
+  XX  z    @x   @c   @v    b   @n   @m   @,   @.    /   XX
   XX  XX        _              _              _    XX XX
 )
 
@@ -101,7 +101,7 @@
   . (chord symbol_combos .)
   
   tap (multi
-    (layer-switch nomods)
+    (layer-switch no-modifier-mods)
     (on-idle-fakekey to-base tap 20)
   )
 

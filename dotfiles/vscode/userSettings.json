@@ -182,7 +182,7 @@
   "vim.smartRelativeLine": true,
   "vim.useCtrlKeys": true,
   "vim.useSystemClipboard": true,
-  "window.menuBarVisibility": "toggle",
+  "window.menuBarVisibility": "visible",
   "window.titleBarStyle": "custom",
   "window.customMenuBarAltFocus": false,
   "window.enableMenuBarMnemonics": false,
