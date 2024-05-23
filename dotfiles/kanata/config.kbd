@@ -29,7 +29,7 @@
 (deflayer navrow
   XX  XX    XX    XX    XX    XX     XX   XX   XX   XX   XX    XX  XX  XX
   XX  1     2     3     4     5      6    7    8    9    0     XX  XX  XX
-  XX  C-A-1 C-A-2 C-A-3 C-A-4 C-A-5  lft  down up   rght _     XX  XX
+  XX  C-A-1 C-A-2 @dnav @fnav C-A-5  lft  down up   rght _     XX  XX
   XX  M-1   M-2   M-3   M-4   M-5     XX   XX   XX   XX   XX  XX
   XX  XX    _              _              _    XX XX
 )
@@ -99,6 +99,9 @@
   m (chord symbol_combos m)
   , (chord symbol_combos ,)
   . (chord symbol_combos .)
+
+  dnav (chord nav_combos C-A-3)
+  fnav (chord nav_combos C-A-4)
   
   tap (multi
     (layer-switch no-modifier-mods)
@@ -183,4 +186,10 @@
     (o l) \
     (j i) S-/ ;; ?
     (k m) S-'
+)
+
+(defchords nav_combos 40
+  (C-A-3) C-A-3
+  (C-A-4) C-A-4
+  (C-A-3 C-A-4) esc
 )
