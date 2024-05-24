@@ -5,12 +5,7 @@
   },
   {
     "key": "ctrl+alt+2",
-    "command": "workbench.action.toggleSidebarVisibility"
-  },
-  {
-    "key": "ctrl+alt+2",
-    "command": "workbench.action.findInFiles",
-    "when": "editorTextFocus"
+    "command": "workbench.action.experimental.quickTextSearch"
   },
   {
     "key": "ctrl+alt+3",
@@ -19,6 +14,15 @@
   {
     "key": "ctrl+alt+3",
     "command": "workbench.view.scm",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+alt+4",
+    "command": "workbench.action.toggleSidebarVisibility"
+  },
+  {
+    "key": "ctrl+alt+4",
+    "command": "workbench.action.findInFiles",
     "when": "editorTextFocus"
   },
   {
