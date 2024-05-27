@@ -23,6 +23,7 @@
   "editor.fontFamily": "JetBrainsMono Nerd Font",
   "editor.fontLigatures": true,
   "editor.formatOnSave": true,
+  "editor.cursorSmoothCaretAnimation": "on",
   "editor.glyphMargin": false,
   "editor.inlineSuggest.enabled": true,
   "editor.lineDecorationsWidth": 0,

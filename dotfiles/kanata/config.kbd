@@ -22,7 +22,7 @@
   XX  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX  XX  XX  XX
   XX  @q   @w   @e   @r   @t   @y   @u   @i   @o   @p   XX  XX  XX
   XX  @ma  @ms  @md  @mf  @g   @h   @mj  @mk  @ml  @m;  XX  XX
-  XX  z    @x   @c   @v    b   @n   @m   @,   @.    /   XX
+  XX  z    @x   @c   @v    b   @n   @m   @,   @.   @/   XX
   XX  XX   @leftnav           spc            @rightnav XX  XX  
 )
 
@@ -38,7 +38,7 @@
   XX  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX  XX  XX  XX
   XX  @q   @w   @e   @r   @t   @y   @u   @i   @o   @p  XX  XX  XX
   XX  @a   @s   @d   @f   @g   @h   @j   @k   @l   @;  XX  XX
-  XX  z    @x   @c   @v    b   @n   @m   @,   @.    /   XX
+  XX  z    @x   @c   @v    b   @n   @m   @,   @.   @/   XX
   XX  XX        _              _              _    XX XX
 )
 
@@ -99,6 +99,7 @@
   m (chord symbol_combos m)
   , (chord symbol_combos ,)
   . (chord symbol_combos .)
+  / (chord symbol_combos /)
 
   tap (multi
     (layer-switch no-modifier-mods)
@@ -145,6 +146,7 @@
     (m) m
     (,) ,
     (.) .
+    (/) /
 
     ;; left horizontal
     (q w) S-1
@@ -176,12 +178,12 @@
     (l ;) grv
     (m ,) S-,
     (, .) S-.
+    (. /) S-/
 
     ;; right vertical
-    (y h) S-6
-    (u j) S-7
-    (i k) S-8
-    (o l) \
-    (j i) S-/ ;; ?
+    (u h) S-6
+    (i j) S-7
+    (o k) S-8
+    (p l) \
     (k m) S-'
 )
