@@ -46,9 +46,9 @@
   ;; Note: consider using different time values for your different fingers.
   ;; For example, your pinkies might be slower to release keys and index
   ;; fingers faster.
-  tap-time 200
+  tap-time 0 ;; default 200ms
   hold-time 150
-  pinky-tap-time 100
+  pinky-tap-time 0
   pinky-hold-time 300
 
   left-hand-keys (
@@ -106,7 +106,7 @@
     (on-idle-fakekey to-base tap 20)
   )
 
-  ma (tap-hold-release-keys $pinky-tap-time $pinky-hold-time (multi @a @tap) lctl $left-hand-keys)
+  ma (tap-hold-release-keys $tap-time $pinky-hold-time (multi @a @tap) lctl $left-hand-keys)
   ms (tap-hold-release-keys $tap-time $hold-time (multi @s @tap) lalt $left-hand-keys)
   md (tap-hold-release-keys $tap-time $hold-time (multi @d @tap) lmet $left-hand-keys)
   mf (tap-hold-release-keys $tap-time $hold-time (multi @f @tap) lsft $left-hand-keys)
@@ -114,7 +114,7 @@
   mj (tap-hold-release-keys $tap-time $hold-time (multi @j @tap) lsft $right-hand-keys)
   mk (tap-hold-release-keys $tap-time $hold-time (multi @k @tap) lmmt $right-hand-keys)
   ml (tap-hold-release-keys $tap-time $hold-time (multi @l @tap) lalt $right-hand-keys)
-  m; (tap-hold-release-keys $pinky-tap-time $pinky-hold-time (multi @; @tap) lctl $right-hand-keys)
+  m; (tap-hold-release-keys $tap-time $pinky-hold-time (multi @; @tap) lctl $right-hand-keys)
 )
 
 (defchords symbol_combos 40
