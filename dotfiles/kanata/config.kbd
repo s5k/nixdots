@@ -47,9 +47,9 @@
   ;; For example, your pinkies might be slower to release keys and index
   ;; fingers faster.
   tap-time 0 ;; default 200ms
-  hold-time 150
+  hold-time 180
   pinky-tap-time 0
-  pinky-hold-time 300
+  pinky-hold-time 250
 
   left-hand-keys (
     q w e r t
@@ -117,7 +117,7 @@
   m; (tap-hold-release-keys $tap-time $pinky-hold-time (multi @; @tap) lmet $right-hand-keys)
 )
 
-(defchords symbol_combos 40
+(defchords symbol_combos 25
     (q) q
     (w) w
     (e) e
