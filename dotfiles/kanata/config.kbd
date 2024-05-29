@@ -30,7 +30,7 @@
   XX  XX    XX    XX    XX    XX     XX   XX   XX   XX   XX    XX  XX  XX
   XX  1     2     3     4     5      6    7    8    9    0     XX  XX  XX
   XX  C-A-1 C-A-2 C-A-3 C-A-4 C-A-5  lft  down up   rght _     XX  XX
-  XX  M-1   M-2   M-3   M-4   M-5     XX   XX   XX   XX   XX  XX
+  XX  M-1   M-2   M-3   M-4   M-5    @warpd-hint   @warpd-grid   @warpd-normal   XX   XX  XX
   XX  XX    _              _              _    XX XX
 )
 
@@ -40,6 +40,14 @@
   XX  @a   @s   @d   @f   @g   @h   @j   @k   @l   @;  XX  XX
   XX  z    @x   @c   @v    b   @n   @m   @,   @.   @/   XX
   XX  XX        _              _              _    XX XX
+)
+
+(deflayer no-mods
+  XX  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX  XX  XX  XX
+  XX  q    w    e    r    t    y    u    i    o    p   XX  XX  XX
+  XX  a    s    d    f    g    h    @nj  @nk   l    ;  XX  XX
+  XX  z    x    c    v    b    n    m    ,    .    /   XX
+  XX  XX        @leftnav         _          @rightnav    XX XX
 )
 
 (defvar
@@ -105,6 +113,13 @@
     (layer-switch no-modifier-mods)
     (on-idle-fakekey to-base tap 20)
   )
+
+  warpd-hint (multi (layer-switch no-mods) A-M-x)
+  warpd-grid (multi (layer-switch no-mods) A-M-g)
+  warpd-normal (multi (layer-switch no-mods) A-M-c)
+
+  nj (chord chord-no-mods j)
+  nk (chord chord-no-mods k)
 
   ma (tap-hold-release-keys $tap-time $pinky-hold-time (multi @a @tap) lmet $left-hand-keys)
   ms (tap-hold-release-keys $tap-time $hold-time (multi @s @tap) lalt $left-hand-keys)
@@ -186,4 +201,10 @@
     (o k) S-8
     (p l) \
     (k m) S-'
+)
+
+(defchords chord-no-mods 25
+  (j) j
+  (k) k
+  (j k) (multi esc (layer-switch base))
 )
