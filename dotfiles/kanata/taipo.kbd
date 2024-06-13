@@ -1,0 +1,242 @@
+(defcfg
+  sequence-input-mode visible-backspaced
+)
+
+(defsrc
+  grv   1     2     3     4     5     6     7     8     9     0     -     =     bspc
+  tab   q     w     e     r     t     y     u     i     o     p     [     ]     \
+  caps  a     s     d     f     g     h     j     k     l     ;     '     ret
+  lsft  z     x     c     v     b     n     m     ,     .     /     rsft
+  lctl  lmet  lalt              spc               ralt  rmet  rctl
+)
+
+(deflayer qwerty
+  @grl  1     2     3     4     5     6     7     8     9     0     -     =     bspc
+  tab   q     w     e     r     t     y     u     i     o     p     [     ]     \
+  caps  a     s     d     f     g     h     j     k     l     ;     '     ret 
+  lsft  z     x     c     v     b     n     m     ,     .     /     rsft
+  lctl  lmet  lalt              spc               ralt  rmet  rctl
+)
+
+(deflayer l0
+  @grl  _     _     _     _     _     _     _     _     _     _     _     _     _
+  _     @pu   @ru   @mu   @iu   _     _     _     _     @iu   @mu   @ru   @pu   _
+  _     @ph   @rh   @mh   @ih   _     _     _     _     @ih   @mh   @rh   @ph
+  _     _     _     _     _     _     _     _     _     _     _     _ 
+  @l2   _     @l1               _                 _     _     _
+)
+
+(deflayer l1
+  _     _     _     _     _     _     _     _     _     _     _     _     _     _
+  _     @pu1  @ru1  @mu1  @iu1  _     _     _     _     @iu1  @mu1  @ru1  @pu1  _
+  _     @ph1  @rh1  @mh1  @ih1  _     _     _     _     @ih1  @mh1  @rh1  @ph1
+  _     _     _     _     _     _     _     _     _     _     _     _ 
+  @l2   _     _                 _                 _     _    _
+)
+
+(deflayer l2
+  _     _     _     _     _     _     _     _     _     _     _     _     _     _
+  _     @pu2  @ru2  @mu2  @iu2  _     _     _     _     @iu2  @mu2  @ru2  @pu2  _
+  _     @ph2  @rh2  @mh2  @ih2  _     _     _     _     @ih2  @mh2  @rh2  @ph2
+  _     _     _     _           _     _     _     _     _     _     _ 
+  _     _     @l1               _                 _     _     _ _
+)
+
+(defalias
+  grl (tap-hold 200 200 grv (layer-toggle layouts))
+
+  tp (layer-switch l0)
+  qwr (layer-switch qwerty)
+
+  ph (chord l0 ph)
+  rh (chord l0 rh)
+  mh (chord l0 mh)
+  ih (chord l0 ih)
+
+  pu (chord l0 pu)
+  ru (chord l0 ru)
+  mu (chord l0 mu)
+  iu (chord l0 iu)
+
+  ph1 (chord l1 ph1)
+  rh1 (chord l1 rh1)
+  mh1 (chord l1 mh1)
+  ih1 (chord l1 ih1)
+
+  pu1 (chord l1 pu1)
+  ru1 (chord l1 ru1)
+  mu1 (chord l1 mu1)
+  iu1 (chord l1 iu1)
+
+  ph2 (chord l2 ph2)
+  rh2 (chord l2 rh2)
+  mh2 (chord l2 mh2)
+  ih2 (chord l2 ih2)
+
+  pu2 (chord l2 pu2)
+  ru2 (chord l2 ru2)
+  mu2 (chord l2 mu2)
+  iu2 (chord l2 iu2)
+
+  l1 (one-shot 200 (layer-while-held l1))
+  l2 (one-shot 200 (layer-while-held l2))
+
+  fn sldr
+)
+
+(defchords l0 25
+  (ih                     ) e
+  (   mh                  ) t
+  (      rh               ) o
+  (         ph            ) a
+  (            iu         ) i
+  (               mu      ) n
+  (                  ru   ) s
+  (                     pu) r
+  (ih mh                  ) h
+  (      rh ph            ) l
+  (            iu mu      ) y
+  (                  ru pu) b
+  (            iu       pu) g
+  (   mh rh               ) u
+  (ih       ph            ) d
+  (               mu ru   ) p
+  (ih    rh               ) c
+  (   mh    ph            ) q
+  (            iu    ru   ) f
+  (               mu    pu) z
+  (ih                ru   ) v
+  (   mh                pu) x
+  (      rh    iu         ) k
+  (         ph    mu      ) j
+  (      rh       mu      ) -
+  (         ph iu         ) w
+  (ih                   pu) m
+  (   mh             ru   ) /
+  (         ph       ru   ) '
+  (      rh             pu) ;
+  (   mh       iu         ) S-/
+  (ih             mu      ) ,
+  (ih          iu         ) (one-shot 200 lsft)
+  (   mh          mu      ) (one-shot 200 lctl)
+  (      rh          ru   ) (one-shot 200 lalt)
+  (         ph          pu) (one-shot 200 lmet)
+  (ih mh rh               ) (one-shot 200 ret)
+  (            iu mu ru   ) (one-shot 200 tab)
+)
+
+(defchords l1 25
+  (ih1                            ) S-e
+  (    mh1                        ) S-t
+  (        rh1                    ) S-o
+  (            ph1                ) S-a
+  (                iu1            ) S-i
+  (                    mu1        ) S-n
+  (                        ru1    ) S-s
+  (                            pu1) S-r
+  (ih1 mh1                        ) S-h
+  (        rh1 ph1                ) S-l
+  (                iu1 mu1        ) S-y
+  (                        ru1 pu1) S-b
+  (                iu1         pu1) S-g
+  (    mh1 rh1                    ) S-u
+  (ih1         ph1                ) S-d
+  (                    mu1 ru1    ) S-p
+  (ih1     rh1                    ) S-c
+  (    mh1     ph1                ) S-q
+  (                iu1     ru1    ) S-f
+  (                    mu1     pu1) S-z
+  (ih1                     ru1    ) S-v
+  (    mh1                     pu1) S-x
+  (        rh1     iu1            ) S-k
+  (            ph1     mu1        ) S-j
+  (        rh1         mu1        ) S--
+  (            ph1 iu1            ) S-w
+  (ih1                         pu1) S-m
+  (    mh1                 ru1    ) \
+  (            ph1         ru1    ) S-'
+  (        rh1                 pu1) S-;
+  (    mh1         iu1            ) S-1
+  (ih1                 mu1        ) .
+  (ih1             iu1            ) (one-shot 200 lft)
+  (    mh1             mu1        ) (one-shot 200 down)
+  (        rh1             ru1    ) (one-shot 200 up)
+  (            ph1             pu1) (one-shot 200 rght)
+  (ih1 mh1 rh1                    ) (one-shot 200 esc)
+  (                iu1 mu1 ru1    ) (one-shot 200 del)
+)
+
+(defchords l2 25
+  (ih2                            ) S-9
+  (    mh2                        ) [
+  (        rh2                    ) S-[
+  (            ph2                ) S-,
+  (                iu2            ) S-0
+  (                    mu2        ) ]
+  (                        ru2    ) S-]
+  (                            pu2) S-.
+  (ih2 mh2                        ) 0
+  (        rh2 ph2                ) 4
+  (                iu2 mu2        ) 5
+  (                        ru2 pu2) 9
+  (                iu2         pu2) S-3
+  (    mh2 rh2                    ) 2
+  (ih2         ph2                ) S-2
+  (                    mu2 ru2    ) 7
+  (ih2     rh2                    ) 1
+  (    mh2     ph2                ) 3
+  (                iu2     ru2    ) 6
+  (                    mu2     pu2) 8
+  (ih2                     ru2    ) S-8
+  (    mh2                     pu2) S-6
+  (        rh2     iu2            ) +
+  (            ph2     mu2        ) =
+  (        rh2         mu2        ) S-5
+  (            ph2 iu2            ) S-7
+  (ih2                         pu2) S-4
+  (    mh2                 ru2    ) S-\
+  (            ph2         ru2    ) `
+  (ih2                 mu2        ) S-`
+  (ih2             iu2            ) (one-shot 200 pgdn)
+  (    mh2             mu2        ) (one-shot 200 end)
+  (        rh2             ru2    ) (one-shot 200 home)
+  (            ph2             pu2) (one-shot 200 pgup)
+  (ih2 mh2 rh2                    ) (one-shot 200 ralt)
+  (                iu2 mu2 ru2    ) @fn
+)
+
+(deffakekeys f-one f1)
+(deffakekeys f-two f2)
+(deffakekeys f-three f3)
+(deffakekeys f-four f4)
+(deffakekeys f-five f5)
+(deffakekeys f-six f6)
+(deffakekeys f-seven f7)
+(deffakekeys f-eight f8)
+(deffakekeys f-nine f9)
+(deffakekeys f-ten f10)
+(deffakekeys f-eleven f11)
+(deffakekeys f-twelve f12)
+
+(defseq
+f-one (1)
+f-two (2)
+f-three (3)
+f-four (4)
+f-five (5)
+f-six (6)
+f-seven (7)
+f-eight (8)
+f-nine (9)
+f-ten (o 0)
+f-eleven (o 1)
+f-twelve (o 2)
+)
+
+(deflayer layouts
+  _     @qwr  @tp   lrld  _     _     _     _     _     _     _     _     _     _
+  _     _     _     _     _     _     _     _     _     _     _     _     _     _
+  _     _     _     _     _     _     _     _     _     _     _     _     _
+  _     _     _     _     _     _     _     _     _     _     _     _ 
+  _     _     _                 _                 _     _     _
+)
