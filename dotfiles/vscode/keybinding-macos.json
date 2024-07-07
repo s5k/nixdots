@@ -1,122 +1,122 @@
 [
-  {
-    "key": "ctrl+alt+1",
-    "command": "workbench.action.terminal.toggleTerminal"
-  },
-  {
-    "key": "ctrl+alt+2",
-    "command": "workbench.action.experimental.quickTextSearch"
-  },
-  {
-    "key": "ctrl+alt+3",
-    "command": "workbench.action.toggleSidebarVisibility"
-  },
-  {
-    "key": "ctrl+alt+3",
-    "command": "workbench.view.scm",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "ctrl+alt+4",
-    "command": "workbench.action.toggleSidebarVisibility"
-  },
-  {
-    "key": "ctrl+alt+4",
-    "command": "workbench.action.findInFiles",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "ctrl+alt+3",
-    "command": "workbench.view.scm",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "ctrl+tab",
-    "command": "-workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup"
-  },
-  {
-    "key": "h",
-    "command": "editor.action.scrollLeftHover",
-    "when": "editorHoverFocused"
-  },
-  {
-    "key": "j",
-    "command": "editor.action.scrollDownHover",
-    "when": "editorHoverFocused"
-  },
-  {
-    "key": "k",
-    "command": "editor.action.scrollUpHover",
-    "when": "editorHoverFocused"
-  },
-  {
-    "key": "l",
-    "command": "editor.action.scrollRightHover",
-    "when": "editorHoverFocused"
-  },
+	{
+		"key": "ctrl+alt+1",
+		"command": "workbench.action.terminal.toggleTerminal"
+	},
+	{
+		"key": "ctrl+alt+2",
+		"command": "workbench.action.experimental.quickTextSearch"
+	},
+	{
+		"key": "ctrl+alt+3",
+		"command": "workbench.action.toggleSidebarVisibility"
+	},
+	{
+		"key": "ctrl+alt+3",
+		"command": "workbench.view.scm",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "ctrl+alt+4",
+		"command": "workbench.action.toggleSidebarVisibility"
+	},
+	{
+		"key": "ctrl+alt+4",
+		"command": "workbench.action.findInFiles",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "ctrl+alt+3",
+		"command": "workbench.view.scm",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "ctrl+tab",
+		"command": "-workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup"
+	},
+	{
+		"key": "h",
+		"command": "editor.action.scrollLeftHover",
+		"when": "editorHoverFocused"
+	},
+	{
+		"key": "j",
+		"command": "editor.action.scrollDownHover",
+		"when": "editorHoverFocused"
+	},
+	{
+		"key": "k",
+		"command": "editor.action.scrollUpHover",
+		"when": "editorHoverFocused"
+	},
+	{
+		"key": "l",
+		"command": "editor.action.scrollRightHover",
+		"when": "editorHoverFocused"
+	},
 
-  {
-    "command": "workbench.action.toggleSidebarVisibility",
-    "key": "cmd+e"
-  },
-  {
-    "command": "workbench.files.action.focusFilesExplorer",
-    "key": "cmd+e",
-    "when": "editorTextFocus"
-  },
-  {
-    "command": "list.find",
-    "key": "/",
-    "when": "filesExplorerFocus && !inputFocus"
-  },
-  {
-    "command": "filesExplorer.findInFolder",
-    "key": "f",
-    "when": "filesExplorerFocus && !inputFocus"
-  },
-  {
-    "command": "filesExplorer.openFilePreserveFocus",
-    "key": "o",
-    "when": "filesExplorerFocus && !foldersViewVisible && !inputFocus"
-  },
-  {
-    "command": "explorer.openAndPassFocus",
-    "key": "o",
-    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsFolder && !inputFocus"
-  },
-  {
-    "command": "explorer.newFile",
-    "key": "a",
-    "when": "filesExplorerFocus && !inputFocus"
-  },
-  {
-    "command": "renameFile",
-    "key": "r",
-    "when": "filesExplorerFocus && !inputFocus"
-  },
-  {
-    "command": "filesExplorer.copy",
-    "key": "c",
-    "when": "filesExplorerFocus && !inputFocus"
-  },
-  {
-    "command": "filesExplorer.paste",
-    "key": "p",
-    "when": "filesExplorerFocus && !inputFocus"
-  },
-  {
-    "command": "deleteFile",
-    "key": "d",
-    "when": "filesExplorerFocus && !inputFocus"
-  },
-  {
-    "command": "filesExplorer.cut",
-    "key": "x",
-    "when": "filesExplorerFocus && !inputFocus"
-  },
-  {
-    "command": "undo",
-    "key": "u",
-    "when": "filesExplorerFocus && !inputFocus"
-  }
+	{
+		"command": "workbench.action.toggleSidebarVisibility",
+		"key": "cmd+e"
+	},
+	{
+		"command": "workbench.files.action.focusFilesExplorer",
+		"key": "cmd+e",
+		"when": "editorTextFocus"
+	},
+	{
+		"command": "list.find",
+		"key": "/",
+		"when": "filesExplorerFocus && !inputFocus"
+	},
+	{
+		"command": "filesExplorer.findInFolder",
+		"key": "f",
+		"when": "filesExplorerFocus && !inputFocus"
+	},
+	{
+		"command": "filesExplorer.openFilePreserveFocus",
+		"key": "o",
+		"when": "filesExplorerFocus && !foldersViewVisible && !inputFocus"
+	},
+	{
+		"command": "explorer.openAndPassFocus",
+		"key": "o",
+		"when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsFolder && !inputFocus"
+	},
+	{
+		"command": "explorer.newFile",
+		"key": "a",
+		"when": "filesExplorerFocus && !inputFocus"
+	},
+	{
+		"command": "renameFile",
+		"key": "r",
+		"when": "filesExplorerFocus && !inputFocus"
+	},
+	{
+		"command": "filesExplorer.copy",
+		"key": "c",
+		"when": "filesExplorerFocus && !inputFocus"
+	},
+	{
+		"command": "filesExplorer.paste",
+		"key": "p",
+		"when": "filesExplorerFocus && !inputFocus"
+	},
+	{
+		"command": "deleteFile",
+		"key": "d",
+		"when": "filesExplorerFocus && !inputFocus"
+	},
+	{
+		"command": "filesExplorer.cut",
+		"key": "x",
+		"when": "filesExplorerFocus && !inputFocus"
+	},
+	{
+		"command": "undo",
+		"key": "u",
+		"when": "filesExplorerFocus && !inputFocus"
+	}
 ]

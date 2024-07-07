@@ -1,184 +1,173 @@
 {
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[nix]": {
-    "editor.defaultFormatter": "B4dM4n.nixpkgs-fmt"
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "breadcrumbs.enabled": false,
-  "editor.cursorSurroundingLines": 8,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.fontFamily": "JetBrainsMono Nerd Font",
-  "editor.fontLigatures": true,
-  "editor.formatOnSave": true,
-  "editor.cursorSmoothCaretAnimation": "on",
-  "editor.glyphMargin": false,
-  "editor.inlineSuggest.enabled": true,
-  "editor.lineDecorationsWidth": 0,
-  "editor.linkedEditing": true,
-  "editor.minimap.enabled": false,
-  "editor.renderLineHighlight": "gutter",
-  "editor.scrollbar.horizontal": "hidden",
-  "editor.scrollbar.vertical": "hidden",
-  "editor.semanticHighlighting.enabled": false,
-  "editor.stickyScroll.enabled": true,
-  "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?",
-  "extensions.autoCheckUpdates": false,
-  "git.enableSmartCommit": true,
-  "github.copilot.enable": {
-    "*": true,
-    "markdown": false,
-    "plaintext": true,
-    "scminput": false
-  },
-  "security.workspace.trust.emptyWindow": false,
-  "security.workspace.trust.enabled": false,
-  "security.workspace.trust.untrustedFiles": "open",
-  "terminal.integrated.defaultProfile.linux": "tmux-shell",
-  "terminal.integrated.defaultProfile.osx": "tmux-shell",
-  "terminal.integrated.profiles.linux": {
-    "tmux-shell": {
-      "args": ["new-session", "-A", "-s", "vscode:${workspaceFolder}"],
-      "path": "tmux"
-    }
-  },
-  "terminal.integrated.profiles.osx": {
-    "tmux-shell": {
-      "args": ["new-session", "-A", "-s", "vscode:${workspaceFolder}"],
-      "path": "tmux"
-    }
-  },
-  "typescript.preferences.importModuleSpecifier": "non-relative",
-  "update.mode": "none",
-  "vim.easymotion": true,
-  "vim.foldfix": true,
-  "vim.handleKeys": {
-    "<C-a>": false,
-    "<C-c>": false,
-    "<C-n>": false,
-    "<C-p>": false,
-    "<C-w>": false
-  },
-  "vim.highlightedyank.color": "rgba(230, 97, 89, 0.7)",
-  "vim.highlightedyank.enable": true,
-  "vim.highlightedyank.textColor": "white",
-  "vim.hlsearch": true,
-  "vim.incsearch": true,
-  "vim.insertModeKeyBindings": [
-    {
-      "after": ["<Esc>"],
-      "before": ["j", "k"]
-    }
-  ],
-  "vim.leader": "<space>",
-  "vim.normalModeKeyBindingsNonRecursive": [
-    {
-      "before": ["<leader>", "r"],
-      "commands": ["editor.action.rename"]
-    },
-    {
-      "before": ["<leader>", "f"],
-      "commands": ["editor.action.wordHighlight.next"]
-    },
-    {
-      "before": ["<leader>", "|"],
-      "commands": ["workbench.action.splitEditor"]
-    },
-    {
-      "before": ["<leader>", "h"],
-      "commands": ["workbench.action.focusLeftGroup"]
-    },
-    {
-      "before": ["H"],
-      "commands": ["workbench.action.previousEditor"]
-    },
-    {
-      "before": ["L"],
-      "commands": ["workbench.action.nextEditor"]
-    },
-    {
-      "before": ["<leader>", "l"],
-      "commands": ["workbench.action.focusRightGroup"]
-    },
-    {
-      "before": ["u"],
-      "commands": ["undo"]
-    },
-    {
-      "before": ["U"],
-      "commands": ["redo"]
-    },
-    {
-      "before": ["g", "p", "d"],
-      "commands": ["editor.action.peekDefinition"]
-    },
-    {
-      "before": ["g", "h"],
-      "commands": ["editor.action.showDefinitionPreviewHover"]
-    },
-    {
-      "before": ["g", "i"],
-      "commands": ["editor.action.goToImplementation"]
-    },
-    {
-      "before": ["g", "p", "i"],
-      "commands": ["editor.action.peekImplementation"]
-    },
-    {
-      "before": ["g", "r"],
-      "commands": ["editor.action.referenceSearch.trigger"]
-    },
-    {
-      "before": ["g", "t"],
-      "commands": ["editor.action.goToTypeDefinition"]
-    },
-    {
-      "before": ["g", "p", "t"],
-      "commands": ["editor.action.peekTypeDefinition"]
-    },
-    {
-      "before": ["g", "e"],
-      "commands": ["editor.action.marker.next"]
-    },
-    {
-      "before": ["q", "f"],
-      "commands": ["editor.action.quickFix"]
-    },
-    {
-      "after": ["1", "5", "g", "j", "z", "z"],
-      "before": ["<C-d>"]
-    },
-    {
-      "after": ["1", "5", "g", "k", "z", "z"],
-      "before": ["<C-u>"]
-    },
-    {
-      "before": ["K"],
-      "commands": ["lineBreakInsert"],
-      "silent": true
-    }
-  ],
-  "vim.smartRelativeLine": true,
-  "vim.useCtrlKeys": true,
-  "vim.useSystemClipboard": true,
-  "window.customMenuBarAltFocus": false,
-  "window.enableMenuBarMnemonics": false,
-  "window.menuBarVisibility": "visible",
-  "window.titleBarStyle": "custom",
-  "workbench.activityBar.location": "hidden",
-  "workbench.colorTheme": "Ayu Dark",
-  "workbench.sideBar.location": "right",
-  "workbench.startupEditor": "readme"
+	"[nix]": {
+		"editor.defaultFormatter": "B4dM4n.nixpkgs-fmt"
+	},
+	"breadcrumbs.enabled": false,
+	"editor.cursorSurroundingLines": 8,
+	"editor.defaultFormatter": "biomejs.biome",
+	"editor.fontFamily": "JetBrainsMono Nerd Font",
+	"editor.fontLigatures": true,
+	"editor.formatOnSave": true,
+	"editor.cursorSmoothCaretAnimation": "on",
+	"editor.glyphMargin": false,
+	"editor.inlineSuggest.enabled": true,
+	"editor.lineDecorationsWidth": 0,
+	"editor.linkedEditing": true,
+	"editor.minimap.enabled": false,
+	"editor.renderLineHighlight": "gutter",
+	"editor.scrollbar.horizontal": "hidden",
+	"editor.scrollbar.vertical": "hidden",
+	"editor.semanticHighlighting.enabled": false,
+	"editor.stickyScroll.enabled": true,
+	"editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?",
+	"editor.codeActionsOnSave": {
+		"quickfix.biome": "explicit",
+		"source.organizeImports.biome": "explicit"
+	},
+	"extensions.autoCheckUpdates": false,
+	"git.enableSmartCommit": true,
+	"github.copilot.enable": {
+		"*": true,
+		"markdown": false,
+		"plaintext": true,
+		"scminput": false
+	},
+	"security.workspace.trust.emptyWindow": false,
+	"security.workspace.trust.enabled": false,
+	"security.workspace.trust.untrustedFiles": "open",
+	"terminal.integrated.defaultProfile.linux": "tmux-shell",
+	"terminal.integrated.defaultProfile.osx": "tmux-shell",
+	"terminal.integrated.profiles.linux": {
+		"tmux-shell": {
+			"args": ["new-session", "-A", "-s", "vscode:${workspaceFolder}"],
+			"path": "tmux"
+		}
+	},
+	"terminal.integrated.profiles.osx": {
+		"tmux-shell": {
+			"args": ["new-session", "-A", "-s", "vscode:${workspaceFolder}"],
+			"path": "tmux"
+		}
+	},
+	"typescript.preferences.importModuleSpecifier": "non-relative",
+	"update.mode": "none",
+	"vim.easymotion": true,
+	"vim.foldfix": true,
+	"vim.handleKeys": {
+		"<C-a>": false,
+		"<C-c>": false,
+		"<C-n>": false,
+		"<C-p>": false,
+		"<C-w>": false
+	},
+	"vim.highlightedyank.color": "rgba(230, 97, 89, 0.7)",
+	"vim.highlightedyank.enable": true,
+	"vim.highlightedyank.textColor": "white",
+	"vim.hlsearch": true,
+	"vim.incsearch": true,
+	"vim.insertModeKeyBindings": [
+		{
+			"after": ["<Esc>"],
+			"before": ["j", "k"]
+		}
+	],
+	"vim.leader": "<space>",
+	"vim.normalModeKeyBindingsNonRecursive": [
+		{
+			"before": ["<leader>", "r"],
+			"commands": ["editor.action.rename"]
+		},
+		{
+			"before": ["<leader>", "f"],
+			"commands": ["editor.action.wordHighlight.next"]
+		},
+		{
+			"before": ["<leader>", "|"],
+			"commands": ["workbench.action.splitEditor"]
+		},
+		{
+			"before": ["<leader>", "h"],
+			"commands": ["workbench.action.focusLeftGroup"]
+		},
+		{
+			"before": ["H"],
+			"commands": ["workbench.action.previousEditor"]
+		},
+		{
+			"before": ["L"],
+			"commands": ["workbench.action.nextEditor"]
+		},
+		{
+			"before": ["<leader>", "l"],
+			"commands": ["workbench.action.focusRightGroup"]
+		},
+		{
+			"before": ["u"],
+			"commands": ["undo"]
+		},
+		{
+			"before": ["U"],
+			"commands": ["redo"]
+		},
+		{
+			"before": ["g", "p", "d"],
+			"commands": ["editor.action.peekDefinition"]
+		},
+		{
+			"before": ["g", "h"],
+			"commands": ["editor.action.showDefinitionPreviewHover"]
+		},
+		{
+			"before": ["g", "i"],
+			"commands": ["editor.action.goToImplementation"]
+		},
+		{
+			"before": ["g", "p", "i"],
+			"commands": ["editor.action.peekImplementation"]
+		},
+		{
+			"before": ["g", "r"],
+			"commands": ["editor.action.referenceSearch.trigger"]
+		},
+		{
+			"before": ["g", "t"],
+			"commands": ["editor.action.goToTypeDefinition"]
+		},
+		{
+			"before": ["g", "p", "t"],
+			"commands": ["editor.action.peekTypeDefinition"]
+		},
+		{
+			"before": ["g", "e"],
+			"commands": ["editor.action.marker.next"]
+		},
+		{
+			"before": ["q", "f"],
+			"commands": ["editor.action.quickFix"]
+		},
+		{
+			"after": ["1", "5", "g", "j", "z", "z"],
+			"before": ["<C-d>"]
+		},
+		{
+			"after": ["1", "5", "g", "k", "z", "z"],
+			"before": ["<C-u>"]
+		},
+		{
+			"before": ["K"],
+			"commands": ["lineBreakInsert"],
+			"silent": true
+		}
+	],
+	"vim.smartRelativeLine": true,
+	"vim.useCtrlKeys": true,
+	"vim.useSystemClipboard": true,
+	"window.customMenuBarAltFocus": false,
+	"window.enableMenuBarMnemonics": false,
+	"window.menuBarVisibility": "visible",
+	"window.titleBarStyle": "custom",
+	"workbench.activityBar.location": "hidden",
+	"workbench.colorTheme": "Ayu Dark",
+	"workbench.sideBar.location": "right",
+	"workbench.startupEditor": "readme"
 }

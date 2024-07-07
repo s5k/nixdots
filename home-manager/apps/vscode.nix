@@ -18,8 +18,6 @@
       github.copilot-chat
       usernamehw.errorlens
       vscodevim.vim
-      esbenp.prettier-vscode
-      dbaeumer.vscode-eslint
       bmewburn.vscode-intelephense-client
       bbenoist.nix
       b4dm4n.vscode-nixpkgs-fmt
@@ -33,6 +31,12 @@
         publisher = "sqrtt";
         version = "1.4.40";
         sha256 = "hhpLKnd9U2gxs9saiUBdlR+eJh2PPeIxTi9kK7CgH20=";
+      }
+      {
+        name = "biome";
+        publisher = "biomejs";
+        version = "2024.5.251958";
+        sha256 = "Pxbvj6e3nRwuLKmPEtE02JdHmZbyuXNh4T+FZKjBkWo=";
       }
       {
         name = "volar";
