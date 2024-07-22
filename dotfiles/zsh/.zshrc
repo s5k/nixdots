@@ -29,3 +29,6 @@ alias nvm="unalias nvm; [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"; nvm $@"
 
 # direnv stuff
 eval "$(direnv hook zsh)"
+
+# thefuck
+eval $(thefuck --alias)
