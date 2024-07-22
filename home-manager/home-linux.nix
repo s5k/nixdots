@@ -58,6 +58,9 @@
     mongodb-compass
     postman
 
+    # Rust stuff
+    rustup
+
     # fonts
     appleEmoji
 
