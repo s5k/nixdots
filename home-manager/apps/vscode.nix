@@ -24,6 +24,7 @@
       ms-vscode-remote.remote-ssh
       ritwickdey.liveserver
       eamodio.gitlens
+      rust-lang.rust-analyzer
     ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
       ### install extensions from marketplace when nixpkgs is not built
       {
