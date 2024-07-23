@@ -25,6 +25,7 @@
       ritwickdey.liveserver
       eamodio.gitlens
       rust-lang.rust-analyzer
+      svsool.markdown-memo
     ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
       ### install extensions from marketplace when nixpkgs is not built
       {
