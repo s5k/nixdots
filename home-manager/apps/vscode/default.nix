@@ -68,7 +68,10 @@
       }
     ];
 
-    keybindings = builtins.fromJSON (builtins.readFile ../../../dotfiles/vscode/keybindings.json);
+    keybindings =
+      if pkgs.stdenv.isLinux
+      then builtins.fromJSON (builtins.readFile ../../../dotfiles/vscode/keybinding-linux.json)
+      else builtins.fromJSON (builtins.readFile ../../../dotfiles/vscode/keybinding-macos.json);
     userSettings = builtins.fromJSON (builtins.readFile ../../../dotfiles/vscode/userSettings.json);
   };
 
