@@ -20,7 +20,7 @@
     ./apps/alacritty.nix
     ./apps/zsh.nix
     ./apps/tmux.nix
-    ./apps/vscode.nix
+    ./apps/vscode
     ./apps/direnv.nix
   ];
 

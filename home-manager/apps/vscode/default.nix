@@ -1,6 +1,14 @@
-{ pkgs, ... }:
+{ pkgs
+, ...
+}:
 
 {
+  imports = [
+    ./remote-ssh-patch
+  ];
+
+  services.vscode-server.enable = true;
+
   home.packages = with pkgs; [
     nixpkgs-fmt
   ];
@@ -60,8 +68,8 @@
       }
     ];
 
-    keybindings = builtins.fromJSON (builtins.readFile ../../dotfiles/vscode/keybindings.json);
-    userSettings = builtins.fromJSON (builtins.readFile ../../dotfiles/vscode/userSettings.json);
+    keybindings = builtins.fromJSON (builtins.readFile ../../../dotfiles/vscode/keybindings.json);
+    userSettings = builtins.fromJSON (builtins.readFile ../../../dotfiles/vscode/userSettings.json);
   };
 
 }
