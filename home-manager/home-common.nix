@@ -21,6 +21,7 @@
     ./apps/zsh.nix
     ./apps/tmux.nix
     ./apps/vscode.nix
+    ./apps/direnv.nix
   ];
 
   nixpkgs = {
@@ -51,12 +52,6 @@
     };
   };
 
-  # TODO: Set your username
-  home = {
-    username = "hydra";
-    homeDirectory = "/home/hydra";
-  };
-
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;
   home.packages = with pkgs; [
@@ -64,6 +59,10 @@
     neovim
     zoxide
     eza
+
+    # terminal stuff
+    navi # take advantage of tldr and cheat.sh with powerful expansions: https://dev.to/kbknapp/using-navi-for-cli-cheats-945
+    thefuck # when you misspelled commands, you can type "fuck" for autocorrection
 
     # fonts
     (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })

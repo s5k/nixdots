@@ -18,7 +18,6 @@
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
     ./apps/gnome.nix
-    ./apps/direnv.nix
   ];
 
   nixpkgs = {
@@ -63,10 +62,6 @@
 
     # fonts
     appleEmoji
-
-    # terminal stuff
-    navi # take advantage of tldr and cheat.sh with powerful expansions: https://dev.to/kbknapp/using-navi-for-cli-cheats-945
-    thefuck # when you misspelled commands, you can type "fuck" for autocorrection
 
     # wrapper GPU acceleration for GUI apps
     (import ./apps/nixgl.nix { inherit inputs pkgs; }).package
