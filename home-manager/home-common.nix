@@ -57,6 +57,7 @@
   home.packages = with pkgs; [
     # Terminal
     neovim
+    fzf
     zoxide # jump around directories
     eza # the new "ls" command
     navi # take advantage of tldr and cheat.sh with powerful expansions: https://dev.to/kbknapp/using-navi-for-cli-cheats-945
