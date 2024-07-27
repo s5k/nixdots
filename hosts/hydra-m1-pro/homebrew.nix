@@ -8,12 +8,12 @@
   homebrew = {
     enable = true;
     onActivation.autoUpdate = true;
-    onActivation.cleanup = "uninstall";
+    onActivation.cleanup = "zap";
     global.brewfile = true;
 
     taps = [
       "homebrew/services"
-      "nrlquaker/createzap"
+      "nrlquaker/createzap" # The "zap" command is available in cask and is very useful to perform system cleaning at the same time as the uninstall
     ];
 
     # If an app isn't available in the Mac App Store, or the version in the App Store has
