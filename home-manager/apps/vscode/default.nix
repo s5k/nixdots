@@ -34,8 +34,15 @@
       eamodio.gitlens
       rust-lang.rust-analyzer
       svsool.markdown-memo
+      bierner.markdown-mermaid
     ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
       ### install extensions from marketplace when nixpkgs is not built
+      {
+        name = "pretty-ts-errors";
+        publisher = "yoavbls";
+        version = "0.5.4";
+        sha256 = "SMEqbpKYNck23zgULsdnsw4PS20XMPUpJ5kYh1fpd14=";
+      }
       {
         name = "prophet";
         publisher = "sqrtt";
