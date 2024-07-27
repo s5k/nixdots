@@ -9,6 +9,11 @@
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     # Also see the 'unstable-packages' overlay at 'overlays/default.nix'.
 
+    nix-darwin = {
+      url = "github:LnL7/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # TMP: This is a temporary workaround to show apps in spotlight on macOS
     mac-app-util.url = "github:hraban/mac-app-util";
 
@@ -39,6 +44,8 @@
   outputs =
     { self
     , nixpkgs
+    , nixpkgs-unstable
+    , nix-darwin
     , home-manager
     , nixpkgs-firefox-darwin
     , nur
@@ -74,6 +81,20 @@
       # Reusable home-manager modules you might want to export
       # These are usually stuff you would upstream into home-manager
       homeManagerModules = import ./modules/home-manager;
+
+      darwinConfigurations = {
+        Hydra-M1-Pro = nix-darwin.lib.darwinSystem {
+          specialArgs = {
+            inherit inputs outputs;
+            pkgs-unstable = import nixpkgs-unstable {
+              system = "aarch64-darwin";
+              config.allowUnfree = true;
+            };
+          };
+          system = "aarch64-darwin";
+          modules = [ ./hosts/hydra-m1-pro ];
+        };
+      };
 
       # Standalone home-manager configuration entrypoint
       # Available through 'home-manager --flake .#your-username@your-hostname'

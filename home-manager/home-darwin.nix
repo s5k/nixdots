@@ -52,7 +52,6 @@
   # programs.neovim.enable = true;
   home.packages = with pkgs; [
     # Database gui
-    sequelpro
   ];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
