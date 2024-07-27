@@ -18,6 +18,9 @@
 
   services.nix-daemon.enable = true;
 
+  networking.knownNetworkServices = [ "Wi-Fi" "Bluetooth PAN" "Thunderbolt Bridge" ];
+  networking.dns = [ "1.1.1.1" "1.0.0.1" "2606:4700:4700::1111" "2606:4700:4700::1001" ];
+
   # Add ability to used TouchID for sudo authentication
   security.pam.enableSudoTouchIdAuth = true;
 
@@ -52,4 +55,7 @@
   system.defaults.".GlobalPreferences" = {
     "com.apple.mouse.scaling" = 3.0;
   };
+
+  # Save screenshots to ~/Pictures/Screenshots
+  system.defaults.screencapture.location = "~/Pictures/Screenshots";
 }
