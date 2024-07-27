@@ -9,6 +9,7 @@
 {
   # You can import other home-manager modules here
   imports = [
+    inputs.mac-app-util.homeManagerModules.default
     # If you want to use modules your own flake exports (from modules/home-manager):
     # outputs.homeManagerModules.example
     # outputs.homeManagerModules.mac-symlink-application
