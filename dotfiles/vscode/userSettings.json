@@ -35,6 +35,9 @@
 	"security.workspace.trust.emptyWindow": false,
 	"security.workspace.trust.enabled": false,
 	"security.workspace.trust.untrustedFiles": "open",
+	"terminal.integrated.shellIntegration.enabled": true,
+	"terminal.integrated.macOptionClickForcesSelection": true,
+	"terminal.integrated.copyOnSelection": true,
 	"terminal.integrated.defaultProfile.linux": "tmux-shell",
 	"terminal.integrated.defaultProfile.osx": "tmux-shell",
 	"terminal.integrated.profiles.linux": {

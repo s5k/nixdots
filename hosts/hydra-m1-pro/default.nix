@@ -15,7 +15,6 @@
   };
 
   programs.zsh.enable = true; # Weird bug with zsh installed from HM, didn't patch bin path of darwin-rebuild, so this line is needed.
-
   services.nix-daemon.enable = true;
 
   networking.knownNetworkServices = [ "Wi-Fi" "Bluetooth PAN" "Thunderbolt Bridge" ];
@@ -59,3 +58,4 @@
   # Save screenshots to ~/Pictures/Screenshots
   system.defaults.screencapture.location = "~/Pictures/Screenshots";
 }
+
