@@ -1,8 +1,10 @@
-clear
 # ~/.zshrc
 export TERM=xterm-256color
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
+
+# create .hushlogin if it doesn't exist
+[[ ! -f $HOME/.hushlogin ]] && touch $HOME/.hushlogin
 
 export DOTFILES="$HOME/Documents/nixdots/dotfiles/zsh"
 export ZSH_DISABLE_COMPFIX="true"
