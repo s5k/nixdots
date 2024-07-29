@@ -21,6 +21,7 @@
     casks = [
       "sequel-ace"
       "postman"
+      "phpstorm"
     ];
 
     # Prefer installing application from the Mac App Store
