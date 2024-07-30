@@ -22,6 +22,7 @@
       "sequel-ace"
       "postman"
       "phpstorm"
+      "cyberduck"
     ];
 
     # Prefer installing application from the Mac App Store
