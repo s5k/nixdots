@@ -5,14 +5,6 @@
     outputs.homeManagerModules.dconf-gnome
   ];
 
-  home.packages = with pkgs; [
-    # Remap keyboards
-    # Read this FAQ to configure run Kmonad as non-root user: https://github.com/kmonad/kmonad/blob/master/doc/faq.md#q-how-do-i-get-uinput-permissions
-    nur.repos.meain.kmonad
-    unstable.gnomeExtensions.kmonad-toggle
-    unstable.kanata
-  ];
-
   gtk = {
     enable = true;
     iconTheme = {

@@ -63,6 +63,8 @@
     # fonts
     appleEmoji
 
+    unstable.kanata
+
     # wrapper GPU acceleration for GUI apps
     (import ./apps/nixgl.nix { inherit inputs pkgs; }).package
   ];

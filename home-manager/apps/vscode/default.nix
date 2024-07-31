@@ -15,12 +15,12 @@
 
   programs.vscode = {
     enable = true;
-    package = pkgs.vscode;
+    package = pkgs.unstable.vscode;
     enableExtensionUpdateCheck = false;
     enableUpdateCheck = false;
     mutableExtensionsDir = false;
 
-    extensions = with pkgs.vscode-extensions; [
+    extensions = with pkgs.unstable.vscode-extensions; [
       ms-vscode-remote.remote-ssh
       github.copilot
       github.copilot-chat
@@ -42,12 +42,6 @@
         publisher = "yoavbls";
         version = "0.5.4";
         sha256 = "SMEqbpKYNck23zgULsdnsw4PS20XMPUpJ5kYh1fpd14=";
-      }
-      {
-        name = "prophet";
-        publisher = "sqrtt";
-        version = "1.4.40";
-        sha256 = "hhpLKnd9U2gxs9saiUBdlR+eJh2PPeIxTi9kK7CgH20=";
       }
       {
         name = "biome";
