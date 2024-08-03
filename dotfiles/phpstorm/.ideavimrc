@@ -1,0 +1,45 @@
+" .ideavimrc is a configuration file for ideavim plugin. It uses
+" the same commands as the original .vimrc configuration.
+" You can find a list of commands here: https://jb.gg/h38q75
+" Find more examples here: https://jb.gg/share-ideavimrc
+
+" --- Basic Settings ---
+let mapleader = " "
+set clipboard+=unnamedplus
+set ignorecase
+set smartcase
+set number relativenumber
+set nu rnu
+set scrolloff=5
+set incsearch
+set hlsearch
+
+" --- Key Mappings ---
+map <c-w> :action CloseEditor<CR>
+inoremap jk <esc>
+nnoremap qf :action ShowIntentionActions<CR>
+nnoremap ge :action GotoNextError<CR>
+nnoremap gh :action ShowHoverInfo<CR>
+nnoremap <leader>r :action RenameElement<CR>
+nnoremap <leader>f :action GotoNextElementUnderCaretUsage<CR>
+nnoremap <s-h> :action PreviousTab<CR>
+nnoremap <s-l> :action NextTab<CR>
+
+" copy class namespace by press ctrl+shift+c
+map <c-s-c> :action CopyReference<CR>
+" allow use ctrl+v to paste inline search
+cnoremap <c-v> <c-r>+
+
+" Remap go to the top of explorer
+let g:NERDTreeMapJumpRoot = 'gg'
+
+" --- Plugins ---
+Plug 'machakann/vim-highlightedyank'
+Plug 'tpope/vim-commentary'
+Plug 'preservim/nerdtree'
+
+
+" --- IDE Actions ---
+" map \r to the reformat code action
+" map <leader>d to start debug
+" map \b to toggle the breakpoint on the current line

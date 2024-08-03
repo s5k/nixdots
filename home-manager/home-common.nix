@@ -22,6 +22,7 @@
     ./apps/tmux.nix
     ./apps/vscode
     ./apps/direnv.nix
+    ./apps/phpstorm.nix
   ];
 
   nixpkgs = {
