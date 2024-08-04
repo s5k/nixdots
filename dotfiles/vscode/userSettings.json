@@ -5,17 +5,74 @@
 	"[php]": {
 		"editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
 	},
+	"apc.electron": {
+		"frame": false,
+		"opacity": 0.95,
+		"transparent": true
+	},
+	"apc.font.family": "JetBrainsMono Nerd Font",
+	"apc.header": {
+		"height": 36
+	},
+	"apc.listRow": {
+		"height": 26
+	},
+	"apc.stylesheet": {
+		".context-view.monaco-menu-container": "border: 1px solid #ffffff09 !important; border-radius: 8px !important;",
+		".current-line-margin-both": "background-color: #ffffff12 !important; box-shadow: inset 0 1px 0 #ffffff09 !important; width: calc(100% - 16px) !important; left:12px !important; border-radius: 4px;",
+		".editor-actions": "display:none",
+		".find-widget": "border-radius:6px; backdrop-filter:blur(10px);",
+		".hover-widget": "backdrop-filter:blur(10px);",
+		".line-numbers": "width: 36px !important",
+		".monaco-button": "border-radius: 4px; box-shadow: inset 0 1px 0 #ffffff09 !important;",
+		".monaco-button-dropdown": "border-radius:6px !important;",
+		".monaco-hover": "backdrop-filter:blur(10px); border-radius:8px !important;",
+		".monaco-inputbox, .scm-editor": "border-radius:6px !important;",
+		".monaco-list-row": "border-radius:6px;",
+		".monaco-list-row.selected, .monaco-list-row.focused": "box-shadow: inset 0 1px 0 #ffffff09 !important; outline:1px solid #00000020 !important;",
+		".monaco-menu": "background:#202020bb !important; backdrop-filter:blur(10px) !important",
+		".monaco-scrollable-element": "background-color:transparent !important",
+		".monaco-workbench .monaco-list:not(.element-focused):focus:before": "display: none",
+		".nosidebar .inline-tabs-placeholder": "width: 75px",
+		".notification-toast": "backdrop-filter:blur(10px); border: 1px solid #ffffff09 !important; border-radius: 8px !important; ",
+		".pane-body": "padding: 8px",
+		".pane-header": "padding: 0 8px",
+		".quick-input-widget": "top: 50% !important; transform: translateY(-51%); backdrop-filter: blur(10px); border: 1px solid #ffffff12;",
+		".quick-input-widget .monaco-inputbox": "height: 32px !important; border-radius: 8px; margin-bottom: 4px;",
+		".quick-input-widget .monaco-list-rows": "background: transparent !important;",
+		".sidebar ul[role=tablist]": "margin-left:16px !important; justify-content:space-between",
+		".sidebar ul[role=tablist] .action-item": "width:40px;padding:0px !important; height:32px !important; display:flex !important; align-items:center; justify-content:center; border-radius:4px;",
+		".sidebar ul[role=tablist] .action-item.checked": "background-color: #ffffff12 !important; box-shadow:inset 0 1px 0 #ffffff09 !important; border-radius:6px;outline:1px solid #00000020 !important;",
+		".sidebar ul[role=tablist] .action-label:before": "left:auto !important;",
+		".sidebar ul[role=tablist] .active-item-indicator": "display:none !important;",
+		".slider": "width: 6px !important; border-radius: 16px;",
+		".split-view-view:first-child .pane-header": "display: none !important",
+		".statusbar": "opacity: 0",
+		".statusbar:hover": "opacity: 1",
+		".suggest-widget": "border-radius:6px !important; backdrop-filter:blur(10px); overflow:hidden; box-shadow:0 0 10px #00000030;",
+		".suggest-widget .monaco-row": "border-radius:0px !important;",
+		".tab": "border:1px solid transparent !important; transition: all 0.2s ease-in-out; border-radius: 8px !important;",
+		".tab.active": " overflow:hidden; border: 1px solid #00000020 !important;  box-shadow: inset 0 1px 0 #ffffff09 !important",
+		".title-label > h2": "display: none"
+	},
 	"breadcrumbs.enabled": false,
+	"editor.codeActionsOnSave": {
+		"quickfix.biome": "explicit",
+		"source.organizeImports.biome": "explicit"
+	},
+	"editor.cursorSmoothCaretAnimation": "on",
 	"editor.cursorSurroundingLines": 8,
 	"editor.defaultFormatter": "biomejs.biome",
 	"editor.fontFamily": "JetBrainsMono Nerd Font",
 	"editor.fontLigatures": true,
+	"editor.fontSize": 14,
 	"editor.formatOnSave": true,
-	"editor.cursorSmoothCaretAnimation": "on",
 	"editor.glyphMargin": false,
 	"editor.inlineSuggest.enabled": true,
 	"editor.lineDecorationsWidth": 0,
+	"editor.lineHeight": 1.8,
 	"editor.linkedEditing": true,
+	"editor.minimap.autohide": true,
 	"editor.minimap.enabled": false,
 	"editor.renderLineHighlight": "gutter",
 	"editor.scrollbar.horizontal": "hidden",
@@ -23,9 +80,16 @@
 	"editor.semanticHighlighting.enabled": false,
 	"editor.stickyScroll.enabled": true,
 	"editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?",
-	"editor.codeActionsOnSave": {
-		"quickfix.biome": "explicit",
-		"source.organizeImports.biome": "explicit"
+	"explorer.fileNesting.enabled": true,
+	"explorer.fileNesting.patterns": {
+		"*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+		"*.jsx": "${capture}.js",
+		"*.ts": "${capture}.js",
+		"*.tsx": "${capture}.ts ${capture}.*.tsx",
+		".env": ".env*",
+		"package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb",
+		"tailwind.config.*": "tailwind.config*, postcss.config*",
+		"tsconfig.json": "tsconfig.*.json"
 	},
 	"extensions.autoCheckUpdates": false,
 	"git.enableSmartCommit": true,
@@ -38,13 +102,15 @@
 	"security.workspace.trust.emptyWindow": false,
 	"security.workspace.trust.enabled": false,
 	"security.workspace.trust.untrustedFiles": "open",
-	"terminal.integrated.shellIntegration.enabled": true,
-	"terminal.integrated.macOptionClickForcesSelection": true,
-	"terminal.integrated.copyOnSelection": true,
-	"terminal.integrated.defaultProfile.linux": "tmux-shell",
+	"symbols.hidesExplorerArrows": false,
 	"terminal.external.linuxExec": "alacritty",
 	"terminal.external.osxExec": "alacritty.app",
+	"terminal.integrated.copyOnSelection": true,
+	"terminal.integrated.defaultProfile.linux": "tmux-shell",
 	"terminal.integrated.defaultProfile.osx": "tmux-shell",
+	"terminal.integrated.fontFamily": "JetBrains Mono",
+	"terminal.integrated.fontSize": 14,
+	"terminal.integrated.macOptionClickForcesSelection": true,
 	"terminal.integrated.profiles.linux": {
 		"tmux-shell": {
 			"args": ["new-session", "-A", "-s", "vscode:${workspaceFolder}"],
@@ -57,6 +123,7 @@
 			"path": "tmux"
 		}
 	},
+	"terminal.integrated.shellIntegration.enabled": true,
 	"typescript.preferences.importModuleSpecifier": "non-relative",
 	"update.mode": "none",
 	"vim.easymotion": true,
@@ -170,12 +237,17 @@
 	"vim.smartRelativeLine": true,
 	"vim.useCtrlKeys": true,
 	"vim.useSystemClipboard": true,
+	"window.commandCenter": false,
 	"window.customMenuBarAltFocus": false,
 	"window.enableMenuBarMnemonics": false,
 	"window.menuBarVisibility": "visible",
 	"window.titleBarStyle": "custom",
-	"workbench.activityBar.location": "hidden",
+	"window.zoomLevel": 0,
+	"workbench.activityBar.location": "bottom",
 	"workbench.colorTheme": "Ayu Dark",
+	"workbench.iconTheme": "symbols",
+	"workbench.layoutControl.enabled": false,
 	"workbench.sideBar.location": "right",
-	"workbench.startupEditor": "readme"
+	"workbench.startupEditor": "readme",
+	"workbench.statusBar.visible": true
 }

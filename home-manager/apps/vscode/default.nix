@@ -15,7 +15,7 @@
 
   programs.vscode = {
     enable = true;
-    package = pkgs.unstable.vscode;
+    package = pkgs.vscode;
     enableExtensionUpdateCheck = false;
     enableUpdateCheck = false;
     mutableExtensionsDir = false;
@@ -37,6 +37,12 @@
       bierner.markdown-mermaid
     ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
       ### install extensions from marketplace when nixpkgs is not built
+      {
+        name = "apc-extension";
+        publisher = "drcika";
+        version = "0.3.9";
+        sha256 = "VMUICGvAFWrG/uL3aGKNUIt1ARovc84TxkjgSkXuoME=";
+      }
       {
         name = "pretty-ts-errors";
         publisher = "yoavbls";

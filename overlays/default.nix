@@ -28,6 +28,27 @@
         };
       }
     );
+
+    # Workaround for install APC extension on MacOS
+    vscode = prev.unstable.vscode.overrideAttrs (old:
+      {
+        vscodeWithExtensions = prev.vscode-utils.extensionsFromVscodeMarketplace [
+          {
+            name = "apc-extension";
+            publisher = "drcika";
+            version = "0.3.9";
+            sha256 = "sha256-VMUICGvAFWrG/uL3aGKNUIt1ARovc84TxkjgSkXuoME=";
+          }
+        ];
+
+        postPatch = old.postPatch or "" + ''
+          cp "${./patch-vscode.sh}" $TMPDIR/patch-vscode.sh
+          chmod +x $TMPDIR/patch-vscode.sh
+          cp -r "$vscodeWithExtensions/share/vscode/extensions/drcika.apc-extension/." "$TMPDIR/extension/"
+          $TMPDIR/patch-vscode.sh "$TMPDIR/extension" "Contents/Resources/app/out"
+          touch Contents/Resources/app/out/bootstrap-amd.js.apc.extension.backup
+        '';
+      });
   };
 
   # When applied, the unstable nixpkgs set (declared in the flake inputs) will
