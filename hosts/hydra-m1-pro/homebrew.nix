@@ -25,6 +25,10 @@
       "cyberduck"
     ];
 
+    brews = [
+      "qcachegrind"
+    ];
+
     # Prefer installing application from the Mac App Store
     masApps = { };
   };
