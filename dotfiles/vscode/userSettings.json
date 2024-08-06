@@ -97,8 +97,8 @@
 	"git.enableSmartCommit": true,
 	"github.copilot.enable": {
 		"*": true,
-		"markdown": false,
-		"plaintext": true,
+		"markdown": true,
+		"plaintext": false,
 		"scminput": false
 	},
 	"security.workspace.trust.emptyWindow": false,
