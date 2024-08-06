@@ -5,6 +5,7 @@
 	"[php]": {
 		"editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
 	},
+	"apc.font.family": "CaskaydiaCove Nerd Font Propo",
 	"apc.electron": {
 		"frame": false,
 		"titleBarStyle": "hidden"

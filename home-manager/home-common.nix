@@ -67,7 +67,7 @@
     unstable.devenv # This made development easier and no needs to use docker for separate version control...
 
     # fonts
-    (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" "FiraCode" "CascadiaCode" ]; })
   ];
 
   programs.home-manager.enable = true;
