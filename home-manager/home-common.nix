@@ -18,6 +18,7 @@
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
     ./apps/alacritty.nix
+    ./apps/git.nix
     ./apps/zsh.nix
     ./apps/tmux.nix
     ./apps/vscode
@@ -71,7 +72,6 @@
   ];
 
   programs.home-manager.enable = true;
-  programs.git.enable = true;
 
   # font settings
   fonts.fontconfig.enable = true;
