@@ -35,6 +35,7 @@
       rust-lang.rust-analyzer
       svsool.markdown-memo
       bierner.markdown-mermaid
+      esbenp.prettier-vscode # temporary use Prettier for formatting when collaborating with others
     ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
       ### install extensions from marketplace when nixpkgs is not built
       {
