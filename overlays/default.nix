@@ -31,6 +31,12 @@
 
     # Workaround for install APC extension on MacOS
     vscode = prev.unstable.vscode.overrideAttrs (old:
+      let
+        VSCodeAppPath =
+          if prev.stdenv.isDarwin
+          then "Contents/Resources/app/out"
+          else "resources/app/out";
+      in
       {
         vscodeWithExtensions = prev.vscode-utils.extensionsFromVscodeMarketplace [
           {
@@ -45,8 +51,8 @@
           cp "${./patch-vscode.sh}" $TMPDIR/patch-vscode.sh
           chmod +x $TMPDIR/patch-vscode.sh
           cp -r "$vscodeWithExtensions/share/vscode/extensions/drcika.apc-extension/." "$TMPDIR/extension/"
-          $TMPDIR/patch-vscode.sh "$TMPDIR/extension" "Contents/Resources/app/out"
-          touch Contents/Resources/app/out/bootstrap-amd.js.apc.extension.backup
+          $TMPDIR/patch-vscode.sh "$TMPDIR/extension" "${VSCodeAppPath}"
+          touch ${VSCodeAppPath}/bootstrap-amd.js.apc.extension.backup
         '';
       });
   };
