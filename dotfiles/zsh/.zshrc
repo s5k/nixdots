@@ -2,6 +2,7 @@
 export TERM=xterm-256color
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
+export LC_CTYPE=en_US.UTF-8
 
 # create .hushlogin if it doesn't exist
 [[ ! -f $HOME/.hushlogin ]] && touch $HOME/.hushlogin

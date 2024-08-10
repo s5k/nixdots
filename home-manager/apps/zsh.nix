@@ -2,18 +2,25 @@
 # 1. add path zsh to /etc/shells (find zsh path: which zsh)
 # 2. run command chsh to set the zsh path
 # 3. logout and login again
+{ pkgs, ... }:
 
 {
   programs.zsh = {
     enable = true;
     syntaxHighlighting.enable = true;
     enableAutosuggestions = true;
+    plugins = [
+      {
+        name = "vi-mode";
+        src = pkgs.zsh-vi-mode;
+        file = "share/zsh-vi-mode/zsh-vi-mode.plugin.zsh";
+      }
+    ];
     oh-my-zsh = {
       enable = true;
       theme = "robbyrussell";
       plugins = [
         "sudo"
-        "vi-mode"
         "fzf"
         "git"
       ];
