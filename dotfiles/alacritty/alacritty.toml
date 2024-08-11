@@ -1,6 +1,6 @@
 [font]
 # Normal font style
-normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }  # Default for Linux/BSD: "monospace", Regular
+normal = { family = "FiraCode Nerd Font Mono", style = "Regular" }  # Default for Linux/BSD: "monospace", Regular
 
 # Bold font style
 bold = { style = "Bold" }  # Inherits family from normal, Default style: Bold
