@@ -112,7 +112,7 @@
   "terminal.integrated.copyOnSelection": true,
   "terminal.integrated.defaultProfile.linux": "tmux-shell",
   "terminal.integrated.defaultProfile.osx": "tmux-shell",
-  "terminal.integrated.fontFamily": "JetBrains Mono",
+  "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font Mono",
   "terminal.integrated.macOptionClickForcesSelection": true,
   "terminal.integrated.profiles.linux": {
     "tmux-shell": {
