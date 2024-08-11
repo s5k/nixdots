@@ -23,6 +23,11 @@ glyph_offset = { x = 0, y = 0 }  # Default: x = 0, y = 0
 # Use built-in font for box drawing characters
 builtin_box_drawing = true  # Default: true
 
+# Padding
+[window]
+padding = { x = 20, y = 20 }
+dynamic_padding = true
+
 # Cyberdream + Ayu Dark theme for Alacritty
 [[colors.indexed_colors]]
 color = "0xffbd5e"
