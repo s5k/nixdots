@@ -53,6 +53,9 @@
   home.packages = with pkgs; [
     # Database gui
     php81
+
+    # Remap keyboard
+    nur.repos.jpyke3.kanata-bin
   ];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
