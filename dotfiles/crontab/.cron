@@ -1,2 +1,0 @@
-@reboot /home/hydra/Documents/nixdots/dotfiles/crontab/sync-ipaddress.sh
-0 * * * * /home/hydra/Documents/nixdots/dotfiles/crontab/sync-ipaddress.sh
