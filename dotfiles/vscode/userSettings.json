@@ -93,7 +93,8 @@
     ".env": ".env*",
     "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb",
     "tailwind.config.*": "tailwind.config*, postcss.config*",
-    "tsconfig.json": "tsconfig.*.json"
+    "tsconfig.json": "tsconfig.*.json",
+    "composer.json": "composer.lock"
   },
   "extensions.autoCheckUpdates": false,
   "git.enableSmartCommit": true,
