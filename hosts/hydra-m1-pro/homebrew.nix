@@ -23,6 +23,7 @@
       "postman"
       "phpstorm"
       "cyberduck"
+      "onlyoffice"
     ];
 
     brews = [
