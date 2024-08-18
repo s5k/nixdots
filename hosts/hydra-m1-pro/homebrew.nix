@@ -19,6 +19,7 @@
     # If an app isn't available in the Mac App Store, or the version in the App Store has
     # limitiations, or Nixpkgs missing these packages, e.g., Transmit, Sequel Ace, install the Homebrew Cask.
     casks = [
+      "swiftbar"
       "sequel-ace"
       "postman"
       "phpstorm"

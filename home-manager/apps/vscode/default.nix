@@ -39,6 +39,12 @@
     ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
       ### install extensions from marketplace when nixpkgs is not built
       {
+        name = "vscode-edit-csv";
+        publisher = "janisdd";
+        version = "0.9.2";
+        sha256 = "F/YEMrRlkLdIOATq+u6ovdZt21MgVbYH1PAnpyncFqs=";
+      }
+      {
         name = "apc-extension";
         publisher = "drcika";
         version = "0.3.9";
