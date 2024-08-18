@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# <swiftbar.hideAbout>true</swiftbar.hideAbout>
+# <swiftbar.hideRunInTerminal>true</swiftbar.hideRunInTerminal>
+# <swiftbar.hideLastUpdated>true</swiftbar.hideLastUpdated>
+# <swiftbar.hideDisablePlugin>true</swiftbar.hideDisablePlugin>
+# <swiftbar.hideSwiftBar>true</swiftbar.hideSwiftBar>
 # <xbar.title>Kanata Config Manager</xbar.title>
 # <xbar.version>v1.0</xbar.version>
 # <xbar.author>S5K</xbar.author>
