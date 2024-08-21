@@ -18,7 +18,7 @@
       };
       pull = { rebase = true; };
       init = { defaultBranch = "master"; };
-      rebase = { abbreviateCommands = true; };
+      rebase = { abbreviateCommands = true; autoStash = true; };
       push = { default = "current"; autoSetupRemote = true; };
       pack = { threads = 0; };
       core = { pager = "${pkgs.delta}/bin/delta"; };
