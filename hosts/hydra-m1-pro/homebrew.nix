@@ -21,10 +21,15 @@
     casks = [
       "swiftbar"
       "sequel-ace"
+      "dbeaver-community"
       "postman"
       "phpstorm"
       "cyberduck"
       "onlyoffice"
+      "cursor"
+      "orbstack"
+      "anydesk"
+      "obsidian"
     ];
 
     brews = [

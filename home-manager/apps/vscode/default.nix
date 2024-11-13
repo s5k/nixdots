@@ -24,18 +24,19 @@
       ms-vscode-remote.remote-ssh
       github.copilot
       github.copilot-chat
+
       usernamehw.errorlens
       vscodevim.vim
       bmewburn.vscode-intelephense-client
       bbenoist.nix
       b4dm4n.vscode-nixpkgs-fmt
-      ms-vscode-remote.remote-ssh
-      ritwickdey.liveserver
       eamodio.gitlens
+      esbenp.prettier-vscode # temporary use Prettier for formatting when collaborating with others
+
+      ritwickdey.liveserver
       rust-lang.rust-analyzer
       svsool.markdown-memo
       bierner.markdown-mermaid
-      esbenp.prettier-vscode # temporary use Prettier for formatting when collaborating with others
     ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
       ### install extensions from marketplace when nixpkgs is not built
       {
