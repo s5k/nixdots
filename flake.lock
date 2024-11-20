@@ -143,6 +143,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-devenv-unstable": {
+      "locked": {
+        "lastModified": 1732014248,
+        "narHash": "sha256-y/MEyuJ5oBWrWAic/14LaIr/u5E0wRVzyYsouYY3W6w=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "23e89b7da85c3640bbc2173fe04f4bd114342367",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs-firefox-darwin": {
       "inputs": {
         "nixpkgs": [
@@ -217,6 +233,7 @@
         "nix-darwin": "nix-darwin",
         "nixGL": "nixGL",
         "nixpkgs": "nixpkgs_2",
+        "nixpkgs-devenv-unstable": "nixpkgs-devenv-unstable",
         "nixpkgs-firefox-darwin": "nixpkgs-firefox-darwin",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "nur": "nur"

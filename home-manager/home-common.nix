@@ -33,6 +33,7 @@
       outputs.overlays.additions
       outputs.overlays.modifications
       outputs.overlays.unstable-packages
+      outputs.overlays.devenv-unstable-packages
       outputs.overlays.nur
 
       # You can also add overlays exported from other flakes:
@@ -65,7 +66,7 @@
     navi # take advantage of tldr and cheat.sh with powerful expansions: https://dev.to/kbknapp/using-navi-for-cli-cheats-945
     thefuck # when you misspelled commands, you can type "fuck" for autocorrection
 
-    unstable.devenv # This made development easier and no needs to use docker for separate version control...
+    devenv-unstable.devenv # This made development easier and no needs to use docker for separate version control...
 
     # fonts
     (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" "FiraCode" "CascadiaCode" ]; })

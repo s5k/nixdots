@@ -65,4 +65,11 @@
       config.allowUnfree = true;
     };
   };
+
+  devenv-unstable-packages = final: _prev: {
+    devenv-unstable = import inputs.nixpkgs-devenv-unstable {
+      system = final.system;
+      config.allowUnfree = true;
+    };
+  };
 }

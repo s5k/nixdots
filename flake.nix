@@ -7,6 +7,7 @@
     # You can access packages and modules from different nixpkgs revs
     # at the same time. Here's an working example:
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-devenv-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     # Also see the 'unstable-packages' overlay at 'overlays/default.nix'.
 
     nix-darwin = {
@@ -45,6 +46,7 @@
     { self
     , nixpkgs
     , nixpkgs-unstable
+    , nixpkgs-devenv-unstable
     , nix-darwin
     , home-manager
     , nixpkgs-firefox-darwin
