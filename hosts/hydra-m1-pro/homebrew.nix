@@ -12,6 +12,7 @@
     global.brewfile = true;
 
     taps = [
+      "mongodb/brew"
       "homebrew/services"
       "nrlquaker/createzap" # The "zap" command is available in cask and is very useful to perform system cleaning at the same time as the uninstall
     ];
@@ -26,14 +27,28 @@
       "phpstorm"
       "cyberduck"
       "onlyoffice"
-      "cursor"
       "orbstack"
       "anydesk"
       "obsidian"
+      "ollama"
+      "redis-insight"
     ];
 
     brews = [
       "qcachegrind"
+      "railway"
+      "mongodb-database-tools" # for mongodump and mongorestore
+
+      # for installl Canvas Nodejs
+      "pkg-config"
+      "cairo"
+      "pango"
+      "libpng"
+      "jpeg"
+      "giflib"
+      "librsvg"
+      "pixman"
+      "stripe-cli"
     ];
 
     # Prefer installing application from the Mac App Store
