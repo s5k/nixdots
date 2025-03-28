@@ -32,6 +32,9 @@
   nix.optimise.automatic = true;
   nix.optimise.interval.Hour = 4;
 
+  # Enable experimental features
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
   system.stateVersion = 4;
