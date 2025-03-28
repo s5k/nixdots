@@ -22,8 +22,8 @@
 
     extensions = with pkgs.unstable.vscode-extensions; [
       ms-vscode-remote.remote-ssh
-      github.copilot
-      github.copilot-chat
+      # github.copilot
+      # github.copilot-chat
 
       usernamehw.errorlens
       vscodevim.vim
