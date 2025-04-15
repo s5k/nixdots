@@ -37,30 +37,38 @@
 
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
-  system.stateVersion = 4;
+  system = {
+    stateVersion = 4;
 
-  system.defaults.loginwindow = {
-    GuestEnabled = false;
-  };
+    defaults = {
+      LaunchServices.LSQuarantine = false; # Disable Quarantine for Downloaded Applications
+      SoftwareUpdate.AutomaticallyInstallMacOSUpdates = false;
 
-  # Dock
-  system.defaults.dock = {
-    tilesize = 22;
-    show-recents = false;
-  };
+      loginwindow = {
+        GuestEnabled = false;
+      };
 
-  # Trackpad
-  system.defaults.trackpad = {
-    Clicking = true;
-  };
-  system.defaults.NSGlobalDomain = {
-    "com.apple.trackpad.scaling" = 3.0;
-  };
-  system.defaults.".GlobalPreferences" = {
-    "com.apple.mouse.scaling" = 3.0;
-  };
+      # Dock
+      dock = {
+        tilesize = 22;
+        show-recents = false;
+      };
 
-  # Save screenshots to ~/Pictures/Screenshots
-  system.defaults.screencapture.location = "~/Pictures/Screenshots";
+      # Trackpad
+      trackpad = {
+        Clicking = true;
+      };
+
+      NSGlobalDomain = {
+        "com.apple.trackpad.scaling" = 3.0;
+      };
+      ".GlobalPreferences" = {
+        "com.apple.mouse.scaling" = 3.0;
+      };
+
+      # Save screenshots to ~/Pictures/Screenshots
+      screencapture.location = "~/Pictures/Screenshots";
+    };
+  };
 }
 
