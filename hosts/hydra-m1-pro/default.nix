@@ -34,6 +34,8 @@
 
   # Enable experimental features
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  # Allow hydra user for trusted users
+  nix.settings.trusted-users = [ "root" "hydra" ];
 
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
