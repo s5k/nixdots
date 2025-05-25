@@ -2,6 +2,7 @@
 init() {
   curwin
   enable_bash_rematch
+  _configuration
   [[ $CURSOR_TYPE == "ibeam" ]] && i_beam_cursor
 }
 
@@ -58,4 +59,21 @@ print_todos() {
 
 enable_bash_rematch() {
   setopt BASH_REMATCH
+}
+
+_configuration() {
+  setopt noautomenu
+  setopt nomenucomplete
+  setopt AUTO_CD
+  setopt BANG_HIST
+  setopt EXTENDED_HISTORY
+  setopt HIST_EXPIRE_DUPS_FIRST
+  setopt HIST_FIND_NO_DUPS
+  setopt HIST_IGNORE_ALL_DUPS
+  setopt HIST_IGNORE_DUPS
+  setopt HIST_IGNORE_SPACE
+  setopt HIST_REDUCE_BLANKS
+  setopt HIST_SAVE_NO_DUPS
+  setopt INC_APPEND_HISTORY
+  setopt SHARE_HISTORY
 }

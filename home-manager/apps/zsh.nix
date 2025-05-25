@@ -3,12 +3,19 @@
 # 2. run command chsh to set the zsh path
 # 3. logout and login again
 
+{ pkgs, lib, config, ... }:
+
 {
   programs.starship = {
     enable = true;
   };
 
   home.file.".config/starship.toml".source = ../../dotfiles/starship/starship.toml;
+
+  programs.fzf = {
+    enable = true;
+    enableZshIntegration = true;
+  };
 
   programs.zsh = {
     enable = true;
@@ -19,17 +26,30 @@
       theme = "robbyrussell";
       plugins = [
         "sudo"
-        "vi-mode"
-        "fzf"
         "git"
       ];
     };
-    initExtra = "
+    plugins = [
+      {
+        name = "vi-mode";
+        src = pkgs.zsh-vi-mode;
+        file = "share/zsh-vi-mode/zsh-vi-mode.plugin.zsh";
+      }
+      {
+        name = "fzf-tab";
+        src = pkgs.zsh-fzf-tab;
+        file = "share/fzf-tab/fzf-tab.plugin.zsh";
+      }
+    ];
+    initExtraFirst = ''
+      ZVM_INIT_MODE=sourcing
+    '';
+    initExtra = ''
       if [ -f $HOME/Documents/nixdots/dotfiles/zsh/.zshrc ];
       then
         source $HOME/Documents/nixdots/dotfiles/zsh/.zshrc
       fi
-      ";
+    '';
   };
 
   programs.navi = {
