@@ -31,4 +31,18 @@
       fi
       ";
   };
+
+  programs.navi = {
+    enable = true;
+    enableZshIntegration = true;
+    settings = {
+      cheats = {
+        paths = [
+          "$HOME/Documents/nixdots/dotfiles/navi/cheats"
+          "$HOME/Library/Application Support/navi/cheats"
+          "$HOME/.local/share/navi/cheats"
+        ];
+      };
+    };
+  };
 }

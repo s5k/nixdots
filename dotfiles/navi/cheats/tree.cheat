@@ -1,0 +1,5 @@
+# Git-aware directory tree
+% tree, git, dir, recursive
+
+# List directory contents, using git ls-tree if in a Git repo, else tree
+command -v git >/dev/null && git rev-parse --is-inside-work-tree >/dev/null 2>&1 && git ls-tree -r --name-only HEAD | tree --fromfile . || tree

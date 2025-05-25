@@ -1,0 +1,5 @@
+# Create Magento 2 admin user
+% magento, admin, user
+
+# Creates an admin user for Magento 2 with custom username, password, and optional fields
+php bin/magento admin:user:create --admin-user=<username> --admin-password=<password> --admin-email=hi@example.com --admin-firstname=John --admin-lastname=Doe
