@@ -9,6 +9,7 @@
     # at the same time. Here's an working example:
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-devenv-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-vscode-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     # Also see the 'unstable-packages' overlay at 'overlays/default.nix'.
 
     nix-darwin = {
@@ -48,6 +49,7 @@
     , nixpkgs
     , nixpkgs-unstable
     , nixpkgs-devenv-unstable
+    , nixpkgs-vscode-unstable
     , nix-darwin
     , home-manager
     , nixpkgs-firefox-darwin

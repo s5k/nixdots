@@ -52,7 +52,11 @@
   # programs.neovim.enable = true;
   home.packages = with pkgs; [
     # Database gui
-    php81
+    # php81
+    php82
+
+    # Rust stuff
+    unstable.rustup
 
     # Remap keyboard
     nur.repos.jpyke3.kanata-bin

@@ -34,6 +34,7 @@
       outputs.overlays.modifications
       outputs.overlays.unstable-packages
       outputs.overlays.devenv-unstable-packages
+      outputs.overlays.vscode-unstable-packages
       outputs.overlays.nur
 
       # You can also add overlays exported from other flakes:

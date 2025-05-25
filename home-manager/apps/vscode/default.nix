@@ -15,12 +15,12 @@
 
   programs.vscode = {
     enable = true;
-    package = pkgs.vscode;
+    package = pkgs.vscode-unstable.vscode;
     enableExtensionUpdateCheck = false;
     enableUpdateCheck = false;
     mutableExtensionsDir = false;
 
-    extensions = with pkgs.unstable.vscode-extensions; [
+    extensions = with pkgs.vscode-unstable.vscode-extensions; [
       ms-vscode-remote.remote-ssh
       # github.copilot
       # github.copilot-chat
@@ -37,7 +37,12 @@
       rust-lang.rust-analyzer
       svsool.markdown-memo
       bierner.markdown-mermaid
-    ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+
+      continue.continue
+      yoavbls.pretty-ts-errors
+      biomejs.biome
+      teabyii.ayu
+    ] ++ pkgs.vscode-unstable.vscode-utils.extensionsFromVscodeMarketplace [
       ### install extensions from marketplace when nixpkgs is not built
       {
         name = "vscode-edit-csv";
@@ -46,40 +51,22 @@
         sha256 = "F/YEMrRlkLdIOATq+u6ovdZt21MgVbYH1PAnpyncFqs=";
       }
       {
-        name = "apc-extension";
-        publisher = "drcika";
-        version = "0.3.9";
-        sha256 = "VMUICGvAFWrG/uL3aGKNUIt1ARovc84TxkjgSkXuoME=";
-      }
-      {
-        name = "pretty-ts-errors";
-        publisher = "yoavbls";
-        version = "0.5.4";
-        sha256 = "SMEqbpKYNck23zgULsdnsw4PS20XMPUpJ5kYh1fpd14=";
-      }
-      {
-        name = "biome";
-        publisher = "biomejs";
-        version = "2024.5.251958";
-        sha256 = "Pxbvj6e3nRwuLKmPEtE02JdHmZbyuXNh4T+FZKjBkWo=";
-      }
-      {
         name = "volar";
         publisher = "vue";
         version = "2.0.6";
         sha256 = "VbTroWemVVoBW/LwR4OueyIFPUKUuRE5e3QTONO1eZc=";
       }
       {
-        name = "ayu";
-        publisher = "teabyii";
-        version = "1.0.5";
-        sha256 = "+IFqgWliKr+qjBLmQlzF44XNbN7Br5a119v9WAnZOu4=";
-      }
-      {
         name = "auto-toggle-sidebar";
         publisher = "dominicvonk";
         version = "0.0.2";
         sha256 = "dIarW3cbC6mdL0Gmito7e2D32AszUvNFyG4WFOxyahw=";
+      }
+      {
+        name = "apc-extension";
+        publisher = "drcika";
+        version = "0.4.1";
+        sha256 = "fq2qlxc7+MpwkraVClB0FGsR0K1/2MTzQ0SYULMx4Kg=";
       }
     ];
 

@@ -72,4 +72,11 @@
       config.allowUnfree = true;
     };
   };
+
+  vscode-unstable-packages = final: _prev: {
+    vscode-unstable = import inputs.nixpkgs-vscode-unstable {
+      system = final.system;
+      config.allowUnfree = true;
+    };
+  };
 }
