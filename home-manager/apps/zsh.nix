@@ -19,13 +19,17 @@
 
   programs.zsh = {
     enable = true;
-    syntaxHighlighting.enable = true;
     enableAutosuggestions = true;
     plugins = [
       {
         name = "vi-mode";
         src = pkgs.zsh-vi-mode;
         file = "share/zsh-vi-mode/zsh-vi-mode.plugin.zsh";
+      }
+      {
+        name = "zsh-fast-syntax-highlighting";
+        src = pkgs.zsh-fast-syntax-highlighting;
+        file = "share/zsh/site-functions/fast-syntax-highlighting.plugin.zsh";
       }
       {
         name = "fzf-tab";
