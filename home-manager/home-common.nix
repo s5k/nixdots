@@ -60,6 +60,7 @@
   # programs.neovim.enable = true;
   home.packages = with pkgs; [
     # Terminal
+    tree
     neovim
     fzf
     zoxide # jump around directories
