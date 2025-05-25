@@ -21,14 +21,6 @@
     enable = true;
     syntaxHighlighting.enable = true;
     enableAutosuggestions = true;
-    oh-my-zsh = {
-      enable = true;
-      theme = "robbyrussell";
-      plugins = [
-        "sudo"
-        "git"
-      ];
-    };
     plugins = [
       {
         name = "vi-mode";

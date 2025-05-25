@@ -9,8 +9,6 @@ export LC_CTYPE=en_US.UTF-8
 
 export DOTFILES="$HOME/Documents/nixdots/dotfiles/zsh"
 export ZSH_DISABLE_COMPFIX="true"
-# not found oh-my-zsh
-# export ZSH="$HOME/.oh-my-zsh"
 
 source $DOTFILES/env.zsh --source_only
 source $DOTFILES/utils.zsh --source_only
