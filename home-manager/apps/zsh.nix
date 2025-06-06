@@ -3,7 +3,7 @@
 # 2. run command chsh to set the zsh path
 # 3. logout and login again
 
-{ pkgs, lib, config, ... }:
+{ pkgs, lib, config, self, ... }:
 
 {
   programs.starship = {
@@ -41,9 +41,9 @@
       ZVM_INIT_MODE=sourcing
     '';
     initExtra = ''
-      if [ -f $HOME/Documents/nixdots/dotfiles/zsh/.zshrc ];
+      if [ -f ${self.outPath}/dotfiles/zsh/.zshrc ];
       then
-        source $HOME/Documents/nixdots/dotfiles/zsh/.zshrc
+        source ${self.outPath}/dotfiles/zsh/.zshrc
       fi
     '';
   };
@@ -54,7 +54,7 @@
     settings = {
       cheats = {
         paths = [
-          "$HOME/Documents/nixdots/dotfiles/navi/cheats"
+          "${self.outPath}/dotfiles/navi/cheats"
           "$HOME/Library/Application Support/navi/cheats"
           "$HOME/.local/share/navi/cheats"
         ];

@@ -13,9 +13,12 @@
 # <xbar.image></xbar.image>
 # <xbar.dependencies>kanata, bash</xbar.dependencies>
 
+# Find the nixdots directory dynamically
+NIXDOTS_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+
 # Paths to your configuration files
-CONFIG1="$HOME/Documents/nixdots/dotfiles/kanata/config-macos-inline.kbd"
-CONFIG2="$HOME/Documents/nixdots/dotfiles/kanata/config-macos.kbd"
+CONFIG1="$NIXDOTS_DIR/dotfiles/kanata/config-macos-inline.kbd"
+CONFIG2="$NIXDOTS_DIR/dotfiles/kanata/config-macos.kbd"
 
 # Function to check if Kanata is running with a specific config
 is_kanata_running() {

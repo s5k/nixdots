@@ -7,7 +7,7 @@ export LC_CTYPE=en_US.UTF-8
 # create .hushlogin if it doesn't exist
 [[ ! -f $HOME/.hushlogin ]] && touch $HOME/.hushlogin
 
-export DOTFILES="$HOME/Documents/nixdots/dotfiles/zsh"
+export DOTFILES="$(cd "$(dirname "${(%):-%x}")/.." && pwd)/zsh"
 export ZSH_DISABLE_COMPFIX="true"
 
 source $DOTFILES/env.zsh --source_only
