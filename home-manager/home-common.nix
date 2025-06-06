@@ -3,6 +3,7 @@
 , lib
 , config
 , pkgs
+, self
 , ...
 }:
 
@@ -78,6 +79,12 @@
 
   # font settings
   fonts.fontconfig.enable = true;
+
+  # Link claude-code commands directory
+  home.file.".claude/commands" = {
+    source = config.lib.file.mkOutOfStoreSymlink "${self.outPath}/dotfiles/claude-code/commands";
+    recursive = true;
+  };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "23.11";

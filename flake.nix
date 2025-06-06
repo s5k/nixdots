@@ -107,7 +107,7 @@
 
         "hydra@macos" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.aarch64-darwin; # Home-manager requires 'pkgs' instance
-          extraSpecialArgs = { inherit inputs outputs; };
+          extraSpecialArgs = { inherit inputs outputs self; };
           modules = [
             # > Our main home-manager configuration file <
             ./home-manager/home-common.nix
@@ -117,7 +117,7 @@
 
         "hydra@hydra-arch2" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
-          extraSpecialArgs = { inherit inputs outputs; };
+          extraSpecialArgs = { inherit inputs outputs self; };
           modules = [
             # > Our main home-manager configuration file <
             ./home-manager/home-common.nix
