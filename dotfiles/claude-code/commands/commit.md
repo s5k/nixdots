@@ -27,6 +27,8 @@ With options:
 
 ## Instructions for Claude
 
+**IMPORTANT: Never add "Co-authored-by: Claude" or any Claude attribution to commit messages.**
+
 When this command is invoked:
 
 1. **Check if $ARGUMENTS contains a custom commit message**
@@ -92,8 +94,6 @@ When this command is invoked:
    fix: resolve memory leak
    docs: update API documentation
    ```
-
-   **REMEMBER: Do Not Add Claude Credit In The Message**
 
 ## Ticket ID Parsing
 
@@ -171,4 +171,3 @@ When auto-generating commits, analyze the diff to determine type:
 - Extract and format ticket IDs to `[TICKET-ID]` format
 - Maintain conventional commit format: `type(scope): message`
 - Breaking changes: use `!` after type/scope (e.g., `feat!: breaking change`)
-- Do not add Claude credit in commit message
