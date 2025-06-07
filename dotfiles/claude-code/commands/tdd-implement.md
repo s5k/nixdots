@@ -1,23 +1,50 @@
-I'll help you implement the feature using Test-Driven Development (TDD). We'll follow these steps:
+# TDD Implementation
 
-1. First, I'll analyze the requirements for $ARGUMENTS
-2. I'll create comprehensive tests that define the expected behavior
-3. I'll verify the tests fail (red)
-4. I'll implement the minimum code needed to pass the tests (green)
-5. I'll refactor the code while keeping tests passing (refactor)
+I'll implement **$ARGUMENTS** using Test-Driven Development (TDD). We'll follow these steps:
 
-Let's start by understanding what we're building and creating a test plan. What specifically should $ARGUMENTS do, and what edge cases should we consider?
+1. **Analyze requirements** for $ARGUMENTS
+2. **Write failing tests** (RED)
+3. **Implement minimum code** to pass tests (GREEN)
+4. **Refactor** while keeping tests passing (REFACTOR)
 
-Remember our TDD principles:
+## TDD Process
 
-- Tests must be written before implementation code
-- Tests must fail initially to prove they're testing something real
-- Implementation should be the minimum necessary to pass tests
-- Refactoring should maintain passing tests
-- Files should not exceed 300 lines
-- Follow the Three-Stage Component Testing approach:
-  1. Storybook isolation
-  2. Test harness integration
-  3. System integration
+### 1. Test Plan
 
-I'll help you through each phase of this TDD process for $ARGUMENTS.
+- What should $ARGUMENTS do?
+- What are the edge cases?
+- What errors should we handle?
+
+### 2. Write Tests First
+
+- Start with simplest test case
+- Tests must fail initially
+- Progress to complex scenarios
+- Include error cases
+
+### 3. Minimal Implementation
+
+- Only code needed to pass current test
+- No extra features
+- Keep files under 300 lines
+
+### 4. Refactor
+
+- Improve code quality
+- Remove duplication
+- Maintain passing tests
+
+## Testing Stages
+
+1. **Unit tests** - Isolated components
+2. **Integration tests** - Component interactions
+3. **E2E tests** - Full user journeys
+
+## Remember
+
+- Tests before implementation
+- One test at a time
+- Simplest solution first
+- Refactor with confidence
+
+Let's start by understanding what we're building and creating a test plan.

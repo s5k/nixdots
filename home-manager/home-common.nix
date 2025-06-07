@@ -80,11 +80,16 @@
   # font settings
   fonts.fontconfig.enable = true;
 
-  # Link claude-code commands directory
-  home.file.".claude/commands" = {
-    source = config.lib.file.mkOutOfStoreSymlink "${self.outPath}/dotfiles/claude-code/commands";
-    recursive = true;
-  };
+  # Copy claude-code commands directory using activation script
+  home.activation.copyClaudeCommands = lib.hm.dag.entryAfter ["writeBoundary"] ''
+    $DRY_RUN_CMD mkdir -p $HOME/.claude
+    if [ -d $HOME/.claude/commands ]; then
+      $DRY_RUN_CMD chmod -R u+w $HOME/.claude/commands
+      $DRY_RUN_CMD rm -rf $HOME/.claude/commands
+    fi
+    $DRY_RUN_CMD cp -r ${self.outPath}/dotfiles/claude-code/commands $HOME/.claude/
+    $DRY_RUN_CMD chmod -R u+w $HOME/.claude/commands
+  '';
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "23.11";
