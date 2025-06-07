@@ -93,6 +93,8 @@ When this command is invoked:
    docs: update API documentation
    ```
 
+   **REMEMBER: Do Not Add Claude Credit In The Message**
+
 ## Ticket ID Parsing
 
 Parse these patterns from $ARGUMENTS:
