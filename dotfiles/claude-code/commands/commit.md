@@ -1,173 +1,147 @@
-# Universal Commit Command
+# Commit Command
 
-Creates well-formatted commits with conventional commit messages. Automatically removes emoji when arguments are provided and handles ticket IDs.
+Create well-formatted conventional commits with optional emoji and ticket ID support.
 
 ## Usage
 
-Basic usage:
+```bash
+/commit                    # Auto-generate with emoji
+/commit --no-verify       # Skip pre-commit checks
+/commit --no-emoji        # No emoji in auto-generated
+/commit JIRA-123          # Ticket only (generates message)
+/commit fix: resolve bug  # Custom message (no emoji)
+```
+
+## STRICT EXECUTION ORDER
+
+**CRITICAL: Never add "Co-authored-by: Claude" or any Claude attribution to commits.**
+
+### Step 1: Parse Arguments
+
+```
+IF $ARGUMENTS exists:
+  - Check for flags: --no-verify, --no-emoji, --staged
+  - Check for ticket pattern: JIRA-123, PROJ-456, #123
+  - Check for commit message: "type: description"
+  - IF only ticket ID → will auto-generate message WITHOUT emoji
+  - IF custom message → use as-is WITHOUT emoji
+```
+
+### Step 2: Pre-commit Verification
+
+```
+IF --no-verify NOT in $ARGUMENTS:
+  1. FIRST read CLAUDE.md file
+  2. Search for lint/test commands in CLAUDE.md
+  3. IF found → run those commands
+  4. IF not found → skip verification
+  5. IF commands fail → ask user to fix or continue
+ELSE:
+  Skip this step entirely
+```
+
+### Step 3: Check Git Status
 
 ```bash
+# Check what needs to be committed
+git status --porcelain
+
+# IF --staged flag present:
+#   Only commit staged files
+# ELSE IF no files staged:
+#   git add .
+# Show user what will be committed
+```
+
+### Step 4: Generate Commit Message
+
+```
+IF $ARGUMENTS contains ticket only (e.g., JIRA-123):
+  1. Analyze changes with: git diff --cached
+  2. Determine type: feat/fix/docs/refactor/etc
+  3. Generate: [JIRA-123] type: description (NO EMOJI)
+
+ELIF $ARGUMENTS contains custom message:
+  1. Parse ticket if present
+  2. Use message as-is (NO EMOJI)
+
+ELSE (no arguments):
+  1. Analyze changes with: git diff --cached
+  2. Determine type and scope
+  3. Generate with emoji (unless --no-emoji)
+```
+
+### Step 5: Execute Commit
+
+```bash
+# Use ONLY this format:
+git commit -m "message here"
+
+# DO NOT use:
+# - git commit --author
+# - git commit --signoff
+# - Any Co-authored-by text
+```
+
+## Decision Tree
+
+```
+START
+  ↓
+Has $ARGUMENTS?
+  ├─ YES → Parse for ticket/message/flags
+  │    ├─ Only ticket? → Generate message, NO emoji
+  │    ├─ Has message? → Use as-is, NO emoji
+  │    └─ Has --no-verify? → Skip step 2
+  └─ NO → Will generate with emoji
+  ↓
+Should verify? (no --no-verify flag)
+  ├─ YES → Read CLAUDE.md FIRST
+  │    ├─ Found lint commands? → Run them
+  │    └─ No commands? → Continue
+  └─ NO → Skip verification
+  ↓
+Check git status
+  ├─ Files staged? → Use staged files
+  └─ Nothing staged? → git add .
+  ↓
+Generate/use commit message
+  ↓
+Execute: git commit -m "message"
+```
+
+## Message Format Examples
+
+```bash
+# Input → Output
+
 /commit
-```
+→ ✨ feat: add user authentication
 
-With custom message (no emoji):
-
-```bash
-/commit fix: resolve authentication bug
-/commit JIRA-123 feat: add user endpoints
-/commit [TICKET-456] refactor: improve error handling
-```
-
-With options:
-
-```bash
-/commit --no-verify
 /commit --no-emoji
+→ feat: add user authentication
+
+/commit JIRA-123
+→ [JIRA-123] fix: resolve authentication issue
+
+/commit JIRA-123 feat: add new endpoint
+→ [JIRA-123] feat: add new endpoint
+
+/commit fix: update dependencies
+→ fix: update dependencies
 ```
 
-## Instructions for Claude
+## Important Rules
 
-**IMPORTANT: Never add "Co-authored-by: Claude" or any Claude attribution to commit messages.**
+1. **ALWAYS read CLAUDE.md before running any lint/test commands**
+2. **NEVER add emoji when $ARGUMENTS provided**
+3. **NEVER add Claude attribution or Co-authored-by**
+4. **Use simple git commit -m only**
+5. **Ticket-only input should generate full message**
 
-When this command is invoked:
+## Error Handling
 
-1. **Check if $ARGUMENTS contains a custom commit message**
-
-   - If $ARGUMENTS is provided, parse it for:
-     - Ticket ID patterns: `TICKET-123`, `[TICKET-123]`, `JIRA-456`, etc.
-     - Conventional commit format after the ticket
-   - For custom messages, DO NOT add emoji - use the provided message as-is
-   - Format: `[TICKET-ID] type: message` if ticket found
-
-2. **Pre-commit Checks** (skip if `--no-verify` in $ARGUMENTS)
-
-   - Check CLAUDE.md for linting/testing commands
-   - If linter commands found in CLAUDE.md, run them
-   - If no linter info in CLAUDE.md, skip pre-commit checks
-   - Common patterns to look for in CLAUDE.md:
-     - "lint", "test", "check", "verify"
-     - Commands like `npm run lint`, `pytest`, `cargo test`, etc.
-
-3. **Git Operations**
-
-   ```bash
-   git status --porcelain
-   ```
-
-   - If no files staged, run `git add .`
-   - Show what will be committed
-
-4. **Analyze Changes** (only if no custom message)
-
-   ```bash
-   git diff --cached
-   ```
-
-   - Determine commit type: feat, fix, docs, style, refactor, test, chore
-   - Identify scope if applicable
-   - Check if changes should be split
-
-5. **Commit Message Format**
-
-   **Custom message examples:**
-
-   ```
-   Input: /commit PROJ-123 fix: resolve login issue
-   Output: [PROJ-123] fix: resolve login issue
-
-   Input: /commit fix: update dependencies
-   Output: fix: update dependencies
-   ```
-
-   **Auto-generated (with emoji by default):**
-
-   ```
-   ✨ feat: add user authentication
-   🐛 fix: resolve memory leak
-   📝 docs: update API documentation
-   ```
-
-   **Auto-generated (--no-emoji flag):**
-
-   ```
-   feat: add user authentication
-   fix: resolve memory leak
-   docs: update API documentation
-   ```
-
-## Ticket ID Parsing
-
-Parse these patterns from $ARGUMENTS:
-
-- `TICKET-123` → `[TICKET-123]`
-- `[TICKET-123]` → `[TICKET-123]` (keep as is)
-- `PROJ-456` → `[PROJ-456]`
-- `#123` → `[#123]`
-- Multiple formats: JIRA-123, GH-456, ISSUE-789, etc.
-
-The ticket should be placed at the beginning of the commit message in square brackets.
-
-## Commit Type Detection
-
-When auto-generating commits, analyze the diff to determine type:
-
-| Type     | When to use                  | Emoji |
-| -------- | ---------------------------- | ----- |
-| feat     | New functionality            | ✨    |
-| fix      | Bug fixes                    | 🐛    |
-| docs     | Documentation only           | 📝    |
-| style    | Formatting, semicolons, etc. | 💄    |
-| refactor | Code restructuring           | ♻️    |
-| perf     | Performance improvements     | ⚡️   |
-| test     | Adding tests                 | ✅    |
-| chore    | Maintenance, dependencies    | 🔧    |
-| build    | Build system changes         | 📦️   |
-| ci       | CI/CD changes                | 👷    |
-| revert   | Reverting commits            | ⏪️   |
-
-## Examples
-
-1. **Simple commit (auto-generated with emoji):**
-
-   ```
-   /commit
-   ```
-
-   Result: `✨ feat: implement user dashboard`
-
-2. **Custom commit with ticket:**
-
-   ```
-   /commit JIRA-1234 fix: resolve null pointer exception
-   ```
-
-   Result: `[JIRA-1234] fix: resolve null pointer exception`
-
-3. **Custom commit without ticket:**
-
-   ```
-   /commit refactor: simplify auth logic
-   ```
-
-   Result: `refactor: simplify auth logic`
-
-4. **Skip verification:**
-
-   ```
-   /commit --no-verify
-   ```
-
-5. **No emoji for auto-generated:**
-   ```
-   /commit --no-emoji
-   ```
-   Result: `feat: implement user dashboard`
-
-## Key Points
-
-- When $ARGUMENTS is provided, NEVER add emoji
-- Always check CLAUDE.md for project-specific linting commands
-- If no linting info found, proceed without pre-commit checks
-- Extract and format ticket IDs to `[TICKET-ID]` format
-- Maintain conventional commit format: `type(scope): message`
-- Breaking changes: use `!` after type/scope (e.g., `feat!: breaking change`)
+- If CLAUDE.md not found → Skip verification
+- If lint/test fails → Ask user: "Tests failed. Continue anyway? (y/n)"
+- If no git repo → Error: "Not a git repository"
+- If nothing to commit → Info: "No changes to commit"
