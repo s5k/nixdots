@@ -21,6 +21,9 @@
       rebase = { abbreviateCommands = true; autoStash = true; };
       push = { default = "current"; autoSetupRemote = true; };
       pack = { threads = 0; };
+      rerere = {
+        enabled = true;
+      };
       core = {
         pager = "${pkgs.delta}/bin/delta";
         excludesfile = "${self.outPath}/dotfiles/git/.gitignore.global";
