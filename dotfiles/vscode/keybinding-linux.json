@@ -113,5 +113,18 @@
 		"command": "undo",
 		"key": "u",
 		"when": "filesExplorerFocus && !inputFocus"
+	},
+	{
+		"key": "ctrl+l",
+		"command": "workbench.panel.chat",
+		"when": "workbench.panel.chat.view.copilot.active"
+	},
+	{
+		"key": "ctrl+alt+i",
+		"command": "noop"
+	},
+	{
+		"key": "shift+alt+i",
+		"command": "noop"
 	}
 ]

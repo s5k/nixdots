@@ -15,15 +15,15 @@
 
   programs.vscode = {
     enable = true;
-    package = pkgs.vscode-unstable.vscode;
+    package = pkgs.vscode;
     enableExtensionUpdateCheck = false;
     enableUpdateCheck = false;
     mutableExtensionsDir = false;
 
     extensions = with pkgs.vscode-unstable.vscode-extensions; [
       ms-vscode-remote.remote-ssh
-      # github.copilot
-      # github.copilot-chat
+      github.copilot
+      github.copilot-chat
 
       usernamehw.errorlens
       vscodevim.vim
@@ -38,7 +38,6 @@
       svsool.markdown-memo
       bierner.markdown-mermaid
 
-      continue.continue
       yoavbls.pretty-ts-errors
       biomejs.biome
       teabyii.ayu
@@ -63,10 +62,10 @@
         sha256 = "dIarW3cbC6mdL0Gmito7e2D32AszUvNFyG4WFOxyahw=";
       }
       {
-        name = "apc-extension";
-        publisher = "drcika";
-        version = "0.4.1";
-        sha256 = "fq2qlxc7+MpwkraVClB0FGsR0K1/2MTzQ0SYULMx4Kg=";
+        name = "symbols";
+        publisher = "miguelsolorio";
+        version = "0.0.24";
+        sha256 = "yEE6G2e/a2/DcKq1+Vtv0YIAtWZG5LyXfZ6cbheRV1g=";
       }
     ];
 

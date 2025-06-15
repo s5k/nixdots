@@ -29,32 +29,8 @@
       }
     );
 
-    # Workaround for install APC extension on MacOS
-    vscode = prev.unstable.vscode.overrideAttrs (old:
-      let
-        VSCodeAppPath =
-          if prev.stdenv.isDarwin
-          then "Contents/Resources/app/out"
-          else "resources/app/out";
-      in
-      {
-        vscodeWithExtensions = prev.vscode-utils.extensionsFromVscodeMarketplace [
-          {
-            name = "apc-extension";
-            publisher = "drcika";
-            version = "0.3.9";
-            sha256 = "sha256-VMUICGvAFWrG/uL3aGKNUIt1ARovc84TxkjgSkXuoME=";
-          }
-        ];
-
-        postPatch = old.postPatch or "" + ''
-          cp "${./patch-vscode.sh}" $TMPDIR/patch-vscode.sh
-          chmod +x $TMPDIR/patch-vscode.sh
-          cp -r "$vscodeWithExtensions/share/vscode/extensions/drcika.apc-extension/." "$TMPDIR/extension/"
-          $TMPDIR/patch-vscode.sh "$TMPDIR/extension" "${VSCodeAppPath}"
-          touch ${VSCodeAppPath}/bootstrap-amd.js.apc.extension.backup
-        '';
-      });
+    # VSCode with custom CSS/JS injection support
+    vscode = (import ./vscode.nix) { inherit prev; };
   };
 
   # When applied, the unstable nixpkgs set (declared in the flake inputs) will
