@@ -216,3 +216,11 @@ div.monaco-hover-content:has([style="color:#f96363;"])
 .monaco-workbench .part.statusbar #vscodevim\.vim\.showcmd {
   display: inline-block !important;
 }
+
+/* Styling for the quick input widget (Cmd+P or Cmd-Shift-P) */
+.quick-input-widget {
+  transform: translateY(-50%) !important;
+  top: 50% !important;
+  padding: 10px 10px 18px 10px !important;
+  border-radius: 20px !important;
+}
