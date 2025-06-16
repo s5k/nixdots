@@ -5,6 +5,10 @@
   "[php]": {
     "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
   },
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer"
+  },
+  "rust-analyzer.check.command": "clippy",
   "breadcrumbs.enabled": false,
   "editor.codeActionsOnSave": {
     "quickfix.biome": "explicit",
