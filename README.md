@@ -16,3 +16,9 @@ Basically, you can clone this repository to your Documents directory, e.g: <code
 darwin-rebuild switch --flake .#Hydra-M1-Pro
 home-manager switch --flake .#hydra@macos
 ```
+
+## Next ideas
+
+- [ ] Use [Vaultwarden](https://github.com/dani-garcia/vaultwarden) to manage secrets with [Rustic](https://github.com/rustic-rs/rustic) for data encryption backup with [Rclone](https://github.com/rclone/rclone) for cloud storage sync.
+- [ ] Use [Xray](https://github.com/XTLS/Xray-core) for advanced network routing and security.
+- [ ] Use [sops-nix](https://github.com/Mic92/sops-nix) for managing secrets in Nix.
