@@ -19,6 +19,6 @@ home-manager switch --flake .#hydra@macos
 
 ## Next ideas
 
-- [ ] Use [Vaultwarden](https://github.com/dani-garcia/vaultwarden) to manage secrets with [Rustic](https://github.com/rustic-rs/rustic) for data encryption backup with [Rclone](https://github.com/rclone/rclone) for cloud storage sync.
+- [ ] Use [Vaultwarden](https://github.com/dani-garcia/vaultwarden) to manage secrets with [Rustic](https://github.com/rustic-rs/rustic) for data encryption backup with [Rclone](https://github.com/rclone/rclone) for cloud storage sync. (Wait till Vaultwarden supports passkeys)
 - [ ] Use [Xray](https://github.com/XTLS/Xray-core) for advanced network routing and security.
 - [ ] Use [sops-nix](https://github.com/Mic92/sops-nix) for managing secrets in Nix.
