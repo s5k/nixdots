@@ -1,0 +1,6 @@
+allowUnfree: true
+inputs:
+  nixpkgs:
+    url: github:NixOS/nixpkgs/nixpkgs-unstable
+  nixpkgs-stable:
+    url: github:NixOS/nixpkgs?rev=9ddcaffecdf098822d944d4147dd8da30b4e6843
