@@ -1,6 +1,13 @@
 { inputs, pkgs, lib, config, ... }:
 let
   pkgs-stable = import inputs.nixpkgs-stable { system = pkgs.stdenv.system; };
+  php-xhprof = pkgs-stable.php82.buildPecl rec {
+    pname = "xhprof";
+    version = "2.3.10";
+    sha256 = "JRrumcJybrxhJuH/C7Lbbi1f0iBWqjNehNufEFXVnZU=";
+    sourceRoot = "xhprof-2.3.10/extension";
+    buildInputs = [ pkgs.pcre2 ];
+  };
 in
 {
   dotenv.disableHint = true;
@@ -8,7 +15,7 @@ in
 
   languages.php.enable = true;
   languages.php.package = pkgs-stable.php82.buildEnv {
-    extensions = { all, enabled }: with all; enabled ++ [ xdebug xsl redis ];
+    extensions = { all, enabled }: with all; enabled ++ [ xdebug xsl redis php-xhprof ];
     extraConfig = ''
       memory_limit = -1
       realpath_cache_ttl = 3600
