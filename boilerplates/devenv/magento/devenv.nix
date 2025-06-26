@@ -19,7 +19,9 @@ in
     extraConfig = ''
       memory_limit = -1
       realpath_cache_ttl = 3600
-      session.gc_probability = 0
+      session.gc_probability = 1
+      session.gc_divisor = 1
+      session.gc_maxlifetime = 1800
       ${lib.optionalString config.services.redis.enable ''
       session.save_handler = redis
       session.save_path = "tcp://127.0.0.1:${toString config.services.redis.port}/0"
@@ -27,8 +29,11 @@ in
       display_errors = On
       error_reporting = E_ALL
       assert.active = 0
-      opcache.memory_consumption = 256M
-      opcache.interned_strings_buffer = 20
+      opcache.enable = 1
+      opcache.enable_cli = 1
+      opcache.optimization_level = 0x7FFFBFFF
+      opcache.memory_consumption = 512
+      opcache.interned_strings_buffer = 64
       zend.assertions = 0
       short_open_tag = 0
       zend.detect_unicode = 0
@@ -54,6 +59,17 @@ in
     "emergency_restart_interval" = "1m";
     "process_control_timeout" = "10s";
   };
+  languages.php.fpm.phpOptions = ''
+    opcache.memory_consumption = 512
+    opcache.interned_strings_buffer = 64
+    opcache.max_accelerated_files = 130986
+    opcache.max_wasted_percentage = 15
+    opcache.validate_timestamps = 1
+    opcache.revalidate_freq = 2
+    opcache.save_comments = 1
+    opcache.fast_shutdown = 1
+    opcache.file_cache_fallback = 1
+  '';
   languages.php.fpm.pools.web = {
     settings = {
       "clear_env" = "no";
