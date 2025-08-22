@@ -68,6 +68,7 @@
     eza # the new "ls" command
     # navi # take advantage of tldr and cheat.sh with powerful expansions: https://dev.to/kbknapp/using-navi-for-cli-cheats-945
     thefuck # when you misspelled commands, you can type "fuck" for autocorrection
+    jq # for JSON processing, e.g., `curl -s https://api.github.com/repos/NixOS/nixpkgs | jq .` that will print the nixpkgs repository information in a pretty format
 
     devenv-unstable.devenv # This made development easier and no needs to use docker for separate version control...
 
@@ -81,7 +82,7 @@
   fonts.fontconfig.enable = true;
 
   # Copy claude-code commands directory using activation script
-  home.activation.copyClaudeCommands = lib.hm.dag.entryAfter ["writeBoundary"] ''
+  home.activation.copyClaudeCommands = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     $DRY_RUN_CMD mkdir -p $HOME/.claude
     if [ -d $HOME/.claude/commands ]; then
       $DRY_RUN_CMD chmod -R u+w $HOME/.claude/commands
@@ -89,6 +90,17 @@
     fi
     $DRY_RUN_CMD cp -r ${self.outPath}/dotfiles/claude-code/commands $HOME/.claude/
     $DRY_RUN_CMD chmod -R u+w $HOME/.claude/commands
+  '';
+
+  # Copy bin directory using activation script
+  home.activation.copyBin = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    $DRY_RUN_CMD mkdir -p $HOME/bin/
+    if [ -d $HOME/bin ]; then
+      $DRY_RUN_CMD chmod -R u+w $HOME/bin/
+      $DRY_RUN_CMD rm -rf $HOME/bin/*
+    fi
+    $DRY_RUN_CMD cp -r ${self.outPath}/dotfiles/bin/* $HOME/bin/
+    $DRY_RUN_CMD chmod -R u+w $HOME/bin/
   '';
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

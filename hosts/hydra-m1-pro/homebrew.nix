@@ -35,6 +35,8 @@
     ];
 
     brews = [
+      "dua-cli"
+
       "qcachegrind"
       "railway"
       "mongodb-database-tools" # for mongodump and mongorestore
@@ -49,6 +51,7 @@
       "librsvg"
       "pixman"
       "stripe-cli"
+      "ripgrep"
     ];
 
     # Prefer installing application from the Mac App Store
