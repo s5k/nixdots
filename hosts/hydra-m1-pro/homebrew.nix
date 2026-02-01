@@ -1,6 +1,7 @@
-{ config, pkgs, ... }:
-
-{
+{ config
+, pkgs
+, ...
+}: {
   environment.shellInit = ''
     eval "$(${config.homebrew.brewPrefix}/brew shellenv)"
   '';
@@ -32,10 +33,14 @@
       "obsidian"
       "ollama"
       "redis-insight"
+      "datagrip"
+      "figma"
+      "firefox"
     ];
 
     brews = [
       "dua-cli"
+      "supabase"
 
       "qcachegrind"
       "railway"
@@ -51,7 +56,16 @@
       "librsvg"
       "pixman"
       "stripe-cli"
+      "node"
+      "python@3.11"
+      "python-tk@3.11"
+      "uv"
+
       "ripgrep"
+
+      "libpq"
+      "postgresql"
+      "pnpm"
     ];
 
     # Prefer installing application from the Mac App Store

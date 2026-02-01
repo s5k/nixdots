@@ -10,6 +10,7 @@
       tmuxPlugins.sensible
       tmuxPlugins.yank
       tmuxPlugins.prefix-highlight
+      tmuxPlugins.better-mouse-mode
     ];
   };
 }

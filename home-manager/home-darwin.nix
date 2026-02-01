@@ -60,6 +60,9 @@
 
     # Remap keyboard
     nur.repos.jpyke3.kanata-bin
+
+    # Archive unzip tool
+    unrar
   ];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

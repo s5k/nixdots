@@ -1,3 +1,4 @@
+export GLOBAL_PNPM_ROOT=~/.pnpm-global
 export BOOKMARKS="$HOME/.cache/bookmarks"
 export TODOS="$HOME/.cache/todos"
 export CURSOR_TYPE="ibeam"

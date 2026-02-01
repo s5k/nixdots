@@ -16,7 +16,8 @@ fi
 mv -n package.json.sample package.json 2>/dev/null || true
 mv -n Gruntfile.js.sample Gruntfile.js 2>/dev/null || true
 mv -n grunt-config.json.sample grunt-config.json 2>/dev/null || true
-npm install --no-audit --no-fund --prefer-offline --legacy-peer-deps 2>/dev/null || true
+pnpm import 2>/dev/null || true
+pnpm install 2>/dev/null || true
 
 # --- Step 2: Generate local-themes.js ---
 THEMES_DIR="app/design/frontend"

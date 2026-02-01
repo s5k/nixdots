@@ -44,6 +44,12 @@
     ] ++ pkgs.vscode-unstable.vscode-utils.extensionsFromVscodeMarketplace [
       ### install extensions from marketplace when nixpkgs is not built
       {
+        name = "roo-cline";
+        publisher = "RooVeterinaryInc";
+        version = "3.24.0";
+        sha256 = "+f/F6GZ+h3oF26evKRxYpBqnuaNm2v5waKwMzQJpo/g=";
+      }
+      {
         name = "vscode-edit-csv";
         publisher = "janisdd";
         version = "0.9.2";
